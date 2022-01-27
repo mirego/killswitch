@@ -65,9 +65,10 @@ The project exposes a `GET /ping` route that sends an HTTP `200 OK` response as 
 
 The project exposes a `GET /health` route that contains checks to make sure the application and its external dependencies are healthy.
 
-| Name   | Description                  |
-| ------ | ---------------------------- |
-| `NOOP` | This check is always healthy |
+| Name       | Description                                |
+| ---------- | ------------------------------------------ |
+| `noop`     | This check is always healthy               |
+| `database` | Check if the database connection is active |
 
 ## 🚀 Deploy
 
