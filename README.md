@@ -73,7 +73,7 @@ The project exposes a `GET /health` route that contains checks to make sure the 
 
 ### Container
 
-A Docker image running an _OTP release_ can be created with `make build` and pushed to a registry with `make push`.
+A Docker image can be created with `make build` and pushed to a registry with `make push`.
 
 ## License
 
