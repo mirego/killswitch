@@ -1,0 +1,37 @@
+<li data-id="<%= behavior.id %>">
+  <div class="row">
+    <div class="col-xs-2">
+      <strong><%= Behavior.human_attribute_name(:version) %></strong>:
+      <%= behavior.human_version %>
+    </div>
+
+    <div class="col-xs-3">
+      <strong><%= Behavior.human_attribute_name(:time) %></strong>:
+      <%= behavior.human_time %>
+    </div>
+
+    <div class="col-xs-2">
+      <strong><%= Behavior.human_attribute_name(:language) %></strong>:
+      <%= behavior.human_language %>
+    </div>
+
+    <div class="col-xs-2">
+      <strong><%= Behavior.human_attribute_name(:action) %></strong>:
+      <em><%= behavior.action %></em>
+    </div>
+
+    <div class="col-xs-2">
+      <strong><%= Behavior.human_attribute_name(:data) %></strong>:
+      <%= link_to t('.toggle'), 'javascript://', class: 'toggle btn btn-xs btn-link' %>
+    </div>
+
+    <div class="col-xs-1">
+      <%= link_to icon(:pencil), edit_web_organization_application_project_behavior_path(application_id: @application, project_id: @project, id: behavior), class: 'btn btn-primary btn-xs' %>
+      <%= link_to icon(:trash_o), web_organization_application_project_behavior_path(application_id: @application, project_id: @project, id: behavior), class: 'btn btn-default btn-xs', data: { method: :delete, confirm: t('.confirm_destroy') } %>
+    </div>
+  </div>
+
+  <div class="data-row row">
+    <pre><%= behavior.pretty_data %></pre>
+  </div>
+</li>

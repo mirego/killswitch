@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body style="margin: 0; padding: 0;" bgcolor="#f6f6f6">
+    <table width="640" cellpadding="0" cellspacing="0" border="0">
+      <tr>
+        <td width="20" style="font-size: 0"> </td>
+        <td>
+          <table width="600" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td height="20" style="font-size: 0"> </td>
+            </tr>
+            <tr>
+              <td bgcolor="#4289cc" align="center">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr><td height="10"></td></tr>
+                  <tr>
+                    <td>
+                      <%= link_to image_tag('img-favicon.png', width: 65, border: 0), root_url %>
+                    </td>
+                  </tr>
+                  <tr><td height="10"></td></tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" style="border: 1px solid #ddd; border-top: none;">
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr><td height="25"></td></tr>
+                  <tr>
+                    <td>
+                      <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td width="20"> </td>
+                          <td>
+                            <%= yield %>
+                          </td>
+                          <td width="20"> </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr><td height="25"></td></tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <table cellpadding="0" cellspacing="0" border="0">
+                  <tr><td height="20"></td></tr>
+                  <tr>
+                    <td>
+                      <table cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                          <td width="20"></td>
+                          <td>
+                            <div style="<%= inline_styles(:'font-size' => '11px', :'color' => '#aaaaaa') %>">
+                              <%= t('.footer_html', url: root_url, style: inline_styles(:'color' => '#888888', :'font-size' => '11px')) %>
+                            </div>
+                          </td>
+                          <td width="20"></td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr><td height="20"></td></tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="20" style="font-size: 0"> </td>
+      </tr>
+    </table>
+  </body>
+</html>

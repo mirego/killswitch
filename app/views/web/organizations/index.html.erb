@@ -1,0 +1,33 @@
+<% content_for :page_title, t('.page_title') %>
+
+<h1><%= t('.page_title') %></h1>
+
+<table class="table table-bordered">
+  <tr class="active">
+    <th><%= Organization.human_attribute_name(:id) %></th>
+    <th><%= Organization.human_attribute_name(:name) %></th>
+    <th><%= Organization.human_attribute_name(:applications_count) %></th>
+    <th><%= Organization.human_attribute_name(:memberships_count) %></th>
+    <th><%= Organization.human_attribute_name(:admin) %></th>
+    <th></th>
+  </tr>
+  <% present @organizations do |organization| %>
+    <tr>
+      <td><%= organization.id %></td>
+      <td><%= organization.name %></td>
+      <td><%= link_to organization.applications_count, web_organization_applications_path(organization) %></td>
+      <td><%= link_to organization.memberships_count, web_organization_memberships_path(organization) %></td>
+      <td><%= bool_icon(organization.super_admin?) %></td>
+      <td>
+        <%= link_to icon(:pencil), edit_web_organization_path(organization), class: 'btn btn-primary btn-xs' %>
+        <% if can?(:destroy, organization) %>
+          <%= link_to icon(:trash_o), web_organization_path(organization), class: 'btn btn-default btn-xs', data: { method: :delete, confirm: t('.confirm_destroy') } %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<hr />
+
+<%= link_to icon(:plus, t('.add_organization')), new_web_organization_path, class: 'btn btn-primary' %>

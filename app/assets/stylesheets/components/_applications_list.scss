@@ -1,0 +1,26 @@
+.applications-list {
+  padding: 0;
+
+  > li {
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 0 0 15px;
+    list-style: none;
+
+    .application-name {
+      margin: 0 0 15px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    ul {
+      padding: 0;
+
+      li {
+        display: inline-block;
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}

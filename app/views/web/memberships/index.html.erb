@@ -1,0 +1,38 @@
+<% content_for :nav_active_item, :users %>
+<% content_for :page_title, t('.page_title', organization: @organization.name) %>
+
+<h1><%= t('.page_title', organization: @organization.name) %></h1>
+
+<% if @memberships.any? %>
+  <table class="table table-bordered">
+    <tr class="active">
+      <th><%= Membership.human_attribute_name(:id) %></th>
+      <th><%= Membership.human_attribute_name(:name) %></th>
+      <th><%= Membership.human_attribute_name(:email) %></th>
+      <th><%= Membership.human_attribute_name(:membership_type) %></th>
+      <th></th>
+    </tr>
+    <% present @memberships do |membership| %>
+      <tr>
+        <td><%= membership.user.id %></td>
+        <% present membership.user do |user| %>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+        <% end %>
+        <td><%= membership.human_membership_type %></td>
+        <td>
+          <%= link_to icon(:pencil), edit_web_organization_membership_path(id: membership), class: 'btn btn-primary btn-xs' %>
+          <% if can?(:destroy, membership) %>
+            <%= link_to icon(:trash_o), web_organization_membership_path(id: membership), class: 'btn btn-default btn-xs', data: { method: :delete, confirm: t('.confirm_destroy') } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div class="alert alert-warning"><%= t('.empty_users') %></div>
+<% end %>
+
+<hr />
+
+<%= link_to icon(:plus, t('.add_user')), new_web_organization_membership_path, class: 'btn btn-primary' %>

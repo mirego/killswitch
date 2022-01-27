@@ -1,0 +1,5 @@
+---
+en:
+  user_mailer:
+    welcome_email:
+      subject: Welcome to Killswitch

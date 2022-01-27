@@ -1,0 +1,3 @@
+vendor/assets/javascripts/* -crlf -diff
+vendor/assets/stylesheets/* -crlf -diff
+vendor/assets/fonts/* -crlf -diff

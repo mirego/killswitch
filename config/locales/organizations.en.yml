@@ -1,0 +1,23 @@
+---
+en:
+  web:
+    organizations:
+      index:
+        page_title: Organizations
+        add_organization: Add organization
+        confirm_destroy: Are you sure you want to remove this organization?
+      new:
+        add_organization: Add organization
+        create: Create
+        cancel: Cancel
+      edit:
+        edit_organization: Edit %{organization}
+        save: Save
+        cancel: Cancel
+      create:
+        notice: The organization was succesfully created.
+      update:
+        notice: The organization was succesfully updated.
+      destroy:
+        notice: The organization was succesfully removed.
+        alert: There was a problem while removing the organization. Please try again.

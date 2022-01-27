@@ -1,0 +1,13 @@
+---
+en:
+  web:
+    errors:
+      forbidden:
+        content: You are not authorized to access this page.
+        title: Forbidden
+      internal_server_error:
+        content: Unfortunately, an error occured and made it unable for us to render the page you requested. Please try again a little later.
+        title: Internal server error
+      not_found:
+        content: The page you were looking for was not found.
+        title: Page not found

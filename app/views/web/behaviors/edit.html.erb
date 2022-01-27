@@ -1,0 +1,13 @@
+<% content_for :nav_active_item, :applications %>
+<% content_for :page_title, t('.edit_behavior', project: present(@behavior.project).full_name) %>
+
+<h1><%= t('.edit_behavior', project: present(@behavior.project).full_name) %></h1>
+
+<%= form_for present(@behavior), url: web_organization_application_project_behavior_path do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <p class="form-actions">
+    <%= button_tag icon(:save, t('.save')), class: 'btn btn-primary' %>
+    <%= link_to t('.cancel'), web_organization_application_project_path(application_id: @application, id: @project), class: 'btn btn-default' %>
+  </p>
+<% end %>

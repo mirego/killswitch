@@ -1,0 +1,30 @@
+---
+en:
+  web:
+    behaviors:
+      update:
+        notice: The behavior was succesfully updated.
+      create:
+        notice: The behavior was succesfully created.
+      destroy:
+        notice: The behavior was succesfully removed.
+        alert: There was a problem while removing the behavior. Please try again.
+      edit:
+        edit_behavior: Edit behavior for %{project}
+        save: Save behavior
+        cancel: Cancel
+      new:
+        add_behavior: Add behavior for %{project}
+        create: Create behavior
+        cancel: Cancel
+      form:
+        populate_with: Populate with
+        ok: OK
+        alert_message: Alert message
+        kill_application: Kill application
+        none: None
+        any_language: Any language
+        please_select: Please select
+      mini:
+        toggle: toggle
+        confirm_destroy: Are you sure you want to remove this behavior?

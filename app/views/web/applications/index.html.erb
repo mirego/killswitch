@@ -1,0 +1,27 @@
+<% content_for :nav_active_item, :applications %>
+<% content_for :page_title, t('.page_title') %>
+
+<% if @applications.any? %>
+  <ul class="applications-list">
+    <% present @applications do |application| %>
+      <li>
+        <h2 class="application-name"><%= link_to application.name, web_organization_application_path(id: application) %></h2>
+        <% if application.projects.any? %>
+          <ul>
+            <% application.projects.each do |project| %>
+              <li><%= link_to project.name, web_organization_application_project_path(application_id: application, id: project) %></li>
+            <% end %>
+          </ul>
+        <% else %>
+          <%= link_to icon(:plus, t('.add_first_project')), new_web_organization_application_project_path(application_id: application), class: 'btn btn-xs' %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div class="alert alert-warning"><%= t('.empty_applications') %></div>
+<% end %>
+
+<hr />
+
+<%= link_to icon(:plus, t('.add_application')), new_web_organization_application_path, class: 'btn btn-primary' %>

@@ -1,0 +1,13 @@
+---
+en:
+  layouts:
+    application:
+      base_title: Killswitch
+      app_title: Killswitch
+      edit_account: Edit account
+      logout: Logout
+      applications: Applications
+      users: Users
+      manage_organizations: Manage organizations
+    mailer:
+      footer_html: Your friends @ <a style="%{style}" href="%{url}">Killswitch</a>

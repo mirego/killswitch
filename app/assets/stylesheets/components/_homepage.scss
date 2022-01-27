@@ -1,0 +1,43 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px;
+  background: radial-gradient(circle, #4289cc 0%, #124575 87%);
+  color: #fff;
+}
+
+.homepage-content {
+  width: 400px;
+  text-align: center;
+}
+
+.homepage-logo {
+  display: block;
+  margin: 0 0 20px;
+  outline: none;
+  font-size: 240px;
+  line-height: 1;
+  color: #fff;
+
+  &:focus,
+  &:hover {
+    color: rgba(#fff, 0.9);
+  }
+}
+
+.homepage-intro {
+  margin: 0 0 35px;
+  line-height: 1.6;
+
+  a {
+    font-weight: bold;
+    color: #fff;
+
+    &:focus,
+    &:hover {
+      color: rgba(#fff, 0.9);
+    }
+  }
+}

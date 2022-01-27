@@ -1,0 +1,12 @@
+<hr />
+
+<div class="exception">
+  <h3><%= request.env['action_dispatch.exception'] %></h3>
+  <p><%= request.env['action_dispatch.exception'].inspect %></p>
+
+  <h4><%= t('.parameters') %></h4>
+  <pre class="wrap"><%= params.inspect %></pre>
+
+  <h4><%= t('.backtrace') %></h4>
+  <pre><%= pretty_backtrace(request.env['action_dispatch.exception']) %></pre>
+</div>

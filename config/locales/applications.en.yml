@@ -1,0 +1,28 @@
+---
+en:
+  web:
+    applications:
+      update:
+        notice: The application was succesfully updated.
+      create:
+        notice: The application was succesfully created.
+      destroy:
+        notice: The application was succesfully removed.
+        alert: There was a problem while removing the application. Please try again.
+      edit:
+        save: Save application
+        cancel: Cancel
+        edit_application: Edit %{application}
+      new:
+        create: Create application
+        cancel: Cancel
+        add_application: Add new application
+      index:
+        page_title: Applications
+        add_application: Add new application
+        add_first_project: Add first project
+        empty_applications: There are currently no applications for this organization.
+      show:
+        edit: Edit application
+        confirm_destroy: Are you sure you want to remove this application?
+        page_title: '%{application}'

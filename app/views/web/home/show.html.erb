@@ -1,0 +1,15 @@
+<% content_for(:hide_navigation, true) %>
+
+<div class="homepage">
+  <div class="homepage-content">
+    <%= link_to root_path, class: "homepage-logo" do %>
+      <%= icon(:shield) %>
+    <% end %>
+
+    <div class="homepage-intro">
+      <%= t('.intro') %>
+    </div>
+
+    <%= link_to icon(:user, t('.sign_in')), new_user_session_path, class: 'btn btn-primary' %>
+  </div>
+</div>

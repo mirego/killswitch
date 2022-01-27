@@ -1,0 +1,4 @@
+<div class="form-group">
+  <%= form.label :membership_type %>
+  <%= form.collection_select :membership_type, MembershipPresenter.membership_types, :id, :label, { prompt: false }, { class: 'form-control' } %>
+</div>

@@ -1,0 +1,27 @@
+<% content_for :nav_active_item, :users %>
+<% content_for :page_title, t('.add_user') %>
+
+<h1><%= t('.add_user') %></h1>
+
+<%= form_for @membership, url: web_organization_memberships_path do |form| %>
+  <%= render_error_messages(form.object) %>
+
+  <%= form.fields_for :user do |form_user| %>
+    <div class="form-group">
+      <%= form_user.label :name %>
+      <%= form_user.text_field :name, class: 'form-control', autofocus: true %>
+    </div>
+
+    <div class="form-group">
+      <%= form_user.label :email %>
+      <%= form_user.email_field :email, class: 'form-control' %>
+    </div>
+  <% end %>
+
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <p class="form-actions">
+    <%= button_tag icon(:plus, t('.create')), class: 'btn btn-primary' %>
+    <%= link_to t('.cancel'), web_organization_memberships_path, class: 'btn btn-default' %>
+  </p>
+<% end %>

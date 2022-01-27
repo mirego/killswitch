@@ -1,0 +1,3 @@
+<div style="<%= inline_styles(:'margin-bottom' => '18px', :'font-weight' => 'bold') %>">Welcome to the Killswitch, <%= @user.name %>!</div>
+<div style="<%= inline_styles(:'margin-bottom' => '18px') %>">Killswitch is a clever control panel built by Mirego that allows mobile developers to apply runtime version-specific behaviors to their iOS or Android application.</div>
+<div style="<%= inline_styles %>">You just need to <%= link_to 'set your password', edit_password_url(@user, reset_password_token: @token), style: inline_styles(:'color' => '#4288cb') %> and you will be able to access the admin panel.</div>

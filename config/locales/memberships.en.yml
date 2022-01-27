@@ -1,0 +1,24 @@
+---
+en:
+  web:
+    memberships:
+      update:
+        notice: The user was succesfully updated.
+      create:
+        notice: The user was succesfully created.
+      destroy:
+        notice: The user was succesfully removed.
+        alert: There was a problem while removing the user. Please try again.
+      index:
+        page_title: Users in %{organization}
+        add_user: Add new user
+        confirm_destroy: Are you sure you want to remove this user from this organization?
+        empty_users: There are currently no users in this organization.
+      edit:
+        save: Save user
+        edit_user: Edit %{user}
+        cancel: Cancel
+      new:
+        create: Create user
+        add_user: Add new user
+        cancel: Cancel

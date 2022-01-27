@@ -1,0 +1,56 @@
+<%= render_error_messages(form.object) %>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :version_operator %>
+      <%= form.collection_select :version_operator, BehaviorPresenter.version_operators, :id, :label, { prompt: t('.please_select') }, { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :version_number %>
+      <%= form.text_field :version_number, class: 'form-control', autofocus: true %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :time_operator %>
+      <%= form.collection_select :time_operator, BehaviorPresenter.time_operators, :id, :label, { prompt: t('.none') }, { class: 'form-control' } %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :time %> <small>(UTC)</small>
+      <%= form.datetime_local_field :time, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="form-group">
+      <%= form.label :language %>
+      <%= form.collection_select :language, BehaviorPresenter.languages, :id, :label, { prompt: t('.any_language') }, { class: 'form-control' } %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <%= form.label :data %>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-link dropdown-toggle btn-xs" data-toggle="dropdown">
+      <%= t('.populate_with') %> <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu behavior-populate" role="menu">
+      <li><%= link_to icon(:check, t('.ok')), 'javascript://', :'data-template' => '{"action": "ok", "buttons": []}' %></li>
+      <li><%= link_to icon(:warning, t('.alert_message')), 'javascript://', :'data-template' => '{"action": "alert", "message": "SUP?", "buttons": [{"type": "cancel", "label": "Nothing"}]}' %></li>
+      <li><%= link_to icon(:times, t('.kill_application')), 'javascript://', :'data-template' => '{"action": "kill", "message": "You have to upgrade to the latest app version.", "buttons": [{"type": "url", "label": "Upgrade", "url": "itms://foo"}]}' %></li>
+    </ul>
+  </div>
+
+  <%= form.text_area :data, class: 'form-control fixed-width-font', rows: 14, value: form.object.data_invalid_json.presence || form.object.pretty_data %>
+</div>

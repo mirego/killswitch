@@ -1,0 +1,80 @@
+a,
+.btn {
+  color: #3d6dc1;
+}
+
+a:hover,
+.btn:hover {
+  color: #2b4d9f;
+}
+
+.navbar-fixed-top .navbar-collapse {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger,
+.btn-default:hover,
+.btn-primary:hover,
+.btn-success:hover,
+.btn-info:hover,
+.btn-warning:hover,
+.btn-danger:hover {
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-default,
+.btn-default:hover {
+  background: #ddd;
+  color: #333;
+}
+
+.btn-primary,
+.btn-primary:hover {
+  background: #3d6dc1;
+}
+
+.navbar-inverse {
+  background: #333;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+  background: #222;
+}
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  border-radius: 0;
+}
+
+.alert {
+  border: 0;
+  text-shadow: none;
+}
+
+.alert-success {
+  background: #dff0d8;
+}
+
+.alert-info {
+  background: #d9edf7;
+}
+
+.alert-warning {
+  background: #fcf8e3;
+}
+
+.alert-danger {
+  background: #f2dede;
+}
+
+.table-bordered {
+  border-radius: 2px;
+}
