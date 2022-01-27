@@ -3,4 +3,5 @@ en:
   web:
     home:
       show:
+        intro: Killswitch is a clever control panel that allows mobile developers to apply runtime version-specific behaviors to their iOS or Android application.
         sign_in: Sign in
