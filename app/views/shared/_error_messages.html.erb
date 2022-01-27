@@ -1,5 +1,5 @@
 <div class="alert alert-danger error-messages">
-  <p class="intro">The form could not be saved because of these errors:</p>
+  <p class="intro"><%= t('.message') %></p>
   <ul>
     <% record.errors.full_messages.each do |message| %>
       <li><%= message %></li>
