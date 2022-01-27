@@ -14,7 +14,7 @@ jobs:
 
     services:
       db:
-        image: postgres:9.4
+        image: postgres:10.19
         env:
           POSTGRES_DB: killswitch_test
           POSTGRES_USER: postgres
