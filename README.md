@@ -8,6 +8,7 @@
 | --------------------------------------- | ------------------------------------------------------ |
 | [🚧 Dependencies](#-dependencies)       | Technical dependencies and how to install them         |
 | [🏎 Kickstart](#-kickstart)              | Details on how to kickstart development on the project |
+| [🏇 Usage](#-usage)                     | Details on how to use the application                  |
 | [🚑 Troubleshooting](#-troubleshooting) | Recurring problems and proven solutions                |
 | [🚀 Deploy](#-deploy)                   | Deployment instructions                                |
 
@@ -54,6 +55,131 @@ Several linting and formatting tools can be ran to ensure coding style consisten
 ### Continuous integration
 
 The `.github/workflows/ci.yaml` workflow ensures that the codebase is in good shape on each pull request and branch push.
+
+## 🏇Usage
+
+### HTTP requests
+
+#### Request a behavior
+
+```
+GET /killswitch
+```
+
+##### Parameters
+
+| Field     | Type   | Description                                                                                  |
+| --------- | ------ | -------------------------------------------------------------------------------------------- |
+| `key`     | String | The API key (eg. `"f206934e29160b43924308251b88"`)                                           |
+| `version` | String | The version of the application to test against (see _Conventions → Version numbers_ section) |
+
+##### Headers
+
+| Header            | Description                                                                                                |
+| ----------------- | ---------------------------------------------------------------------------------------------------------- |
+| `Accept-Language` | The application language (the API will return localized messages, if available (eg. `Accept-Language: fr`) |
+
+##### Possible erroneous responses
+
+| Status | Code        | Reason                                                |
+| ------ | ----------- | ----------------------------------------------------- |
+| `400`  | Bad Request | Parameters are malformed or missing                   |
+| `404`  | Not Found   | The API key is not for a valid project or application |
+
+##### Possible successful responses
+
+| Status | Code         | Message                                                                                                         |
+| ------ | ------------ | --------------------------------------------------------------------------------------------------------------- |
+| `200`  | OK           | Everything is under control, yay                                                                                |
+| `304`  | Not Modified | If an `If-None-Match` header is passed and a cached response exist, a `304` will be returned with an empty body |
+
+### Conventions
+
+#### Version numbers
+
+Version numbers supported by Killswitch must match the following regular expression:
+
+```
+/^\d+(\.\d+)?(\.\d+)?(\.\w+)?$/
+```
+
+Here are some valid and invalid version number examples:
+
+| Version number | Valid              |
+| -------------- | ------------------ |
+| `1`            | :white_check_mark: |
+| `1.2`          | :white_check_mark: |
+| `1.2.3`        | :white_check_mark: |
+| `1.2.3.4`      | :white_check_mark: |
+| `1.2.3.foo`    | :white_check_mark: |
+| `foo`          | :x:                |
+| `1.`           | :x:                |
+| `1.2.`         | :x:                |
+| `1.2.3.4.5`    | :x:                |
+
+### Behaviors JSON representations
+
+#### Root element
+
+| Key       | Type   | Description                                                               |
+| --------- | ------ | ------------------------------------------------------------------------- |
+| `action`  | String | The action the application should enforce (`"ok"`, `"alert"` or `"kill"`) |
+| `message` | String | A message to display to the user                                          |
+| `buttons` | Array  | An array of buttons to show to the user                                   |
+
+##### Buttons
+
+| Key     | Type   | Description                                                                                    |
+| ------- | ------ | ---------------------------------------------------------------------------------------------- |
+| `type`  | String | The type of button (`"cancel`, `"url"` or `"reload"`), defaults to `"cancel"` if not specified |
+| `label` | String | The button label                                                                               |
+| `url`   | String | The button URL, if the type is `"url"`                                                         |
+
+#### Examples
+
+##### OK
+
+```json
+{
+  "action": "ok",
+  "buttons": []
+}
+```
+
+##### Alert
+
+```json
+{
+  "action": "alert",
+  "message": "SUP?",
+  "buttons": [
+    {
+      "type": "cancel",
+      "label": "Nothing"
+    }
+  ]
+}
+```
+
+##### Kill
+
+```json
+{
+  "action": "kill",
+  "message": "The app will be killed now. Please upgrade to the latest version.",
+  "buttons": [
+    {
+      "type": "url",
+      "label": "Upgrade",
+      "url": "itms://foo"
+    },
+    {
+      "type": "cancel",
+      "label": "I don’t want to."
+    }
+  ]
+}
+```
 
 ## 🚑 Troubleshooting
 
