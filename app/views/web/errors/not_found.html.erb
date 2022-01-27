@@ -1,0 +1,6 @@
+<h1>Page not found</h1>
+<p>The page you were looking for was not found.</p>
+
+<% if Rails.application.secrets.show_backtrace %>
+  <%= render partial: 'shared/exception_backtrace' %>
+<% end %>

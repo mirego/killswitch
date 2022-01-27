@@ -1,0 +1,10 @@
+---
+en:
+  web:
+    users:
+      update:
+        notice: The user was succesfully updated.
+      edit:
+        save: Save user
+        edit_account: Edit %{user}
+        cancel: Cancel

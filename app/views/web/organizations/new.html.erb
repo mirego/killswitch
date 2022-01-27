@@ -1,0 +1,13 @@
+<% content_for :nav_active_item, :users %>
+<% content_for :page_title, t('.add_organization') %>
+
+<h1><%= t('.add_organization') %></h1>
+
+<%= form_for @organization, url: web_organizations_path do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <p class="form-actions">
+    <%= button_tag icon(:plus, t('.create')), class: 'btn btn-primary' %>
+    <%= link_to t('.cancel'), web_organizations_path, class: 'btn btn-default' %>
+  </p>
+<% end %>

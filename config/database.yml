@@ -1,0 +1,14 @@
+development:
+  adapter: postgresql
+  database: killswitch_development
+  host: 127.0.0.1
+
+test:
+  adapter: postgresql
+  database: killswitch_test
+  host: 127.0.0.1
+
+production:
+  adapter: postgresql
+  database: killswitch_production
+  host: 127.0.0.1

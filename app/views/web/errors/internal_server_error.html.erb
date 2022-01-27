@@ -1,0 +1,6 @@
+<h1>Internal server error</h1>
+<p>Unfortunately, an error occured and made it unable for us to render the page you requested. Please try again a little later.</p>
+
+<% if Rails.application.secrets.show_backtrace %>
+  <%= render partial: 'shared/exception_backtrace' %>
+<% end %>

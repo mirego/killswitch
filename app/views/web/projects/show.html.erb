@@ -1,0 +1,37 @@
+<% content_for :nav_active_item, :applications %>
+<% content_for :page_title, t('.page_title', project: present(@project).full_name) %>
+
+<% present @project do |project| %>
+  <h1><%= project.full_name %></h1>
+
+  <h4><%= t('.informations') %></h4>
+  <table class="table table-bordered">
+    <tr>
+      <th class="active"><%= Project.human_attribute_name(:key) %></th>
+      <td><code><%= project.key %></code></td>
+    </tr>
+  </table>
+
+  <h4>
+    <%= Project.human_attribute_name(:behaviors) %>
+    <%= link_to icon(:plus), new_web_organization_application_project_behavior_path(application_id: @application, project_id: project), class: 'btn btn-primary btn-xs' %>
+  </h4>
+
+  <% if project.behaviors.any? %>
+    <ul class="behaviors-list" data-order-url="<%= order_web_organization_application_project_behaviors_path(application_id: @application, project_id: project) %>">
+      <% present project.behaviors do |behavior| %>
+        <%= render partial: 'web/behaviors/mini', locals: { behavior: behavior } %>
+      <% end %>
+    </ul>
+  <% else %>
+    <div class="alert alert-warning"><%= t('.empty_behaviors') %></div>
+  <% end %>
+
+  <h4><%= t('.example') %></h4>
+  <pre class="inverse"><%= project.curl_example %></pre>
+
+  <hr />
+
+  <%= link_to icon(:pencil, t('.edit')), edit_web_organization_application_project_path(application_id: @application, id: project), class: 'btn btn-primary' %>
+  <%= link_to icon(:trash_o), web_organization_application_project_path(application_id: @application, id: project), class: 'btn btn-default', data: { method: 'delete', confirm: t('.confirm_destroy') } %>
+<% end %>

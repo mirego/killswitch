@@ -1,0 +1,35 @@
+---
+en:
+  activerecord:
+    attributes:
+      behavior:
+        empty_time: N/A
+        time_operators:
+          lt: Before
+          gt: After
+        version_operators:
+          lte: Less than or equals to
+          lt: Less than
+          eq: Equals to
+          gt: Greater than
+          gte: Greater than or equals to
+        languages:
+          any: Any language
+          fr: French
+          en: English
+          de: German
+          es: Spanish
+          it: Italian
+          pt: Portuguese
+      membership:
+        membership_types:
+          admin: Administrator
+          member: Member
+      organization:
+        memberships_count: Memberships
+        applications_count: Applications
+    errors:
+      messages:
+        invalid_json: is not valid JSON (%{errors})
+        invalid_email: is not valid email address
+        invalid_version: is not valid version number

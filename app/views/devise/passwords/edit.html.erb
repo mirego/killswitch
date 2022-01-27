@@ -1,0 +1,17 @@
+<div class="alert alert-info">
+  <p><%= t('.intro') %></p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: 'put' }) do |form| %>
+  <%= devise_error_messages! %>
+  <%= form.hidden_field :reset_password_token %>
+
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-control' %>
+  </div>
+
+  <p class="form-actions">
+    <%= button_tag icon(:save, t('.save')), class: 'btn btn-primary' %>
+  </p>
+<% end %>

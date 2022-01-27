@@ -1,0 +1,26 @@
+---
+en:
+  web:
+    projects:
+      update:
+        notice: The project was succesfully updated.
+      create:
+        notice: The project was succesfully created.
+      destroy:
+        notice: The project was succesfully removed.
+        alert: There was a problem while removing the project. Please try again.
+      edit:
+        edit_project: Edit %{project}
+        save: Save project
+        cancel: Cancel
+      new:
+        add_project: Add new project for %{application}
+        create: Create project
+        cancel: Cancel
+      show:
+        informations: Informations
+        example: Example
+        edit: Edit project
+        confirm_destroy: Are you sure you want to remove this project?
+        page_title: '%{project}'
+        empty_behaviors: There are currently no behaviors for this project.

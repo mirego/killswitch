@@ -1,0 +1,16 @@
+<%= render_error_messages(form.object) %>
+
+<div class="form-group">
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control', autofocus: true %>
+</div>
+
+<div class="form-group">
+  <%= form.label :email %>
+  <%= form.email_field :email, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+  <%= form.label :password %> (leave blank to remain unchanged)
+  <%= form.password_field :password, class: 'form-control' %>
+</div>

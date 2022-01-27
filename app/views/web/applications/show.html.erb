@@ -1,0 +1,17 @@
+<% content_for :nav_active_item, :applications %>
+<% content_for :page_title, t('.page_title', application: present(@application).name) %>
+
+<% present @application do |application| %>
+  <h1 class="application-name"><%= t('.page_title', application: present(application).name) %></h1>
+
+  <% present(application.projects) do |project| %>
+    <%= link_to project.name, web_organization_application_project_path(application_id: application, id: project), class: 'btn' %>
+  <% end %>
+
+  <%= link_to icon(:plus), new_web_organization_application_project_path(application_id: @application), class: 'btn btn-primary btn-sm' %>
+<% end %>
+
+<hr />
+
+<%= link_to icon(:pencil, t('.edit')), edit_web_organization_application_path(id: @application), class: 'btn btn-primary' %>
+<%= link_to icon(:trash_o), web_organization_application_path(id: @application), class: 'btn btn-default', data: { method: 'delete', confirm: t('.confirm_destroy') } %>

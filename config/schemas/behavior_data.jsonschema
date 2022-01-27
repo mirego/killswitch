@@ -1,0 +1,54 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-03/schema",
+  "id": "#",
+  "required": false,
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "type": "string",
+      "id": "action",
+      "required": true,
+      "pattern": "^(ok|kill|alert)$"
+    },
+    "message": {
+      "type": "string",
+      "id": "message",
+      "required": false
+    },
+    "buttons": {
+      "type": "array",
+      "id": "buttons",
+      "required": false,
+      "items": {
+        "type": "object",
+        "id": "0",
+        "required": false,
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "type": "string",
+            "id": "label",
+            "required": true
+          },
+          "type": {
+            "type": "label",
+            "id": "type",
+            "required": false,
+            "pattern": "^(url|cancel|reload)$"
+          },
+          "url": {
+            "type": "label",
+            "id": "url",
+            "required": false
+          },
+          "order": {
+            "type": "number",
+            "id": "order",
+            "required": false
+          }
+        }
+      }
+    }
+  }
+}

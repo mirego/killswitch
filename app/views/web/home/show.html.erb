@@ -1,0 +1,15 @@
+<% content_for(:hide_navigation, true) %>
+
+<div class="homepage">
+  <div class="homepage-content">
+    <%= link_to root_path, class: "homepage-logo" do %>
+      <%= icon(:shield) %>
+    <% end %>
+
+    <div class="homepage-intro">
+      <%= link_to 'Killswitch', root_path %> is a clever control panel built by <a href="https://www.mirego.com">Mirego</a> that allows mobile developers to apply runtime version-specific behaviors to their iOS or Android application.
+    </div>
+
+    <%= link_to icon(:user, t('.sign_in')), new_user_session_path, class: 'btn btn-primary' %>
+  </div>
+</div>

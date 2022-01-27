@@ -1,0 +1,12 @@
+<% content_for :page_title, t('.edit_account', user: present(@user).name) %>
+
+<h1><%= t('.edit_account', user: present(@user).name) %></h1>
+
+<%= form_for @user, url: web_user_path do |form| %>
+  <%= render partial: 'form', locals: { form: form } %>
+
+  <p class="form-actions">
+    <%= button_tag icon(:save, t('.save')), class: 'btn btn-primary' %>
+    <%= link_to t('.cancel'), root_path, class: 'btn btn-default' %>
+  </p>
+<% end %>

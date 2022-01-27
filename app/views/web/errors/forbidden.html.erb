@@ -1,0 +1,6 @@
+<h1>Forbidden</h1>
+<p>You are not authorized to access this page.</p>
+
+<% if Rails.application.secrets.show_backtrace %>
+  <%= render partial: 'shared/exception_backtrace' %>
+<% end %>

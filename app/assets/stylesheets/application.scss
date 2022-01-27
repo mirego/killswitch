@@ -1,0 +1,7 @@
+//= require bootstrap/dist/css/bootstrap.css
+//= require bootstrap-theme
+//= require font-awesome
+//= require_self
+
+@import 'base';
+@import 'components/*';

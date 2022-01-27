@@ -1,0 +1,45 @@
+.behaviors-list {
+  padding: 0;
+  margin: 0 0 20px;
+
+  li {
+    list-style: none;
+
+    &.sortable-placeholder {
+      width: auto;
+      height: 43px;
+      border-top: 1px solid #ddd;
+      margin: 0 -15px;
+      background: #fffde6;
+    }
+
+    &:last-child {
+      .row {
+        border-bottom: 1px solid #ddd;
+      }
+    }
+
+    .row {
+      border-top: 1px solid #ddd;
+      cursor: move;
+
+      > div {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-right: 1px solid #ddd;
+      }
+    }
+
+    .data-row {
+      display: none;
+      padding: 0 0 30px;
+
+      pre {
+        border: 0;
+        border-bottom: 1px solid #ddd;
+        border-radius: 0;
+        margin: 0;
+      }
+    }
+  }
+}

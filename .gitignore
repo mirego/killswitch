@@ -1,0 +1,12 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Environement variables
+.env
+
+# Bower components
+vendor/assets/components

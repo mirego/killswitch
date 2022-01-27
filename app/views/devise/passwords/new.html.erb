@@ -1,0 +1,16 @@
+<div class="alert alert-info">
+  <p><%= t('.intro') %></p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: 'post' }) do |form| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-control' %>
+  </div>
+
+  <p class="form-actions">
+    <%= button_tag icon(:envelope_o, t('.send_instructions')), class: 'btn btn-primary' %>
+  </p>
+<% end %>
