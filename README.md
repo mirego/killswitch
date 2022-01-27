@@ -9,7 +9,7 @@
 | [🚧 Dependencies](#-dependencies)       | Technical dependencies and how to install them         |
 | [🏎 Kickstart](#-kickstart)              | Details on how to kickstart development on the project |
 | [🚑 Troubleshooting](#-troubleshooting) | Recurring problems and proven solutions                |
-| [🚀 Deploy](#-deploy)                   | Deployment details for various enviroments             |
+| [🚀 Deploy](#-deploy)                   | Deployment instructions                                |
 
 ## 🚧 Dependencies
 
