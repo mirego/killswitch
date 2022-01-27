@@ -8,7 +8,7 @@
 | --------------------------------------- | ------------------------------------------------------ |
 | [🚧 Dependencies](#-dependencies)       | Technical dependencies and how to install them         |
 | [🏎 Kickstart](#-kickstart)              | Details on how to kickstart development on the project |
-| [👷 Usage](#-usage)                     | Details on how to use the application                  |
+| [🏇 Usage](#-usage)                     | Details on how to use the application                  |
 | [🚑 Troubleshooting](#-troubleshooting) | Recurring problems and proven solutions                |
 | [🚀 Deploy](#-deploy)                   | Deployment instructions                                |
 
@@ -56,7 +56,7 @@ Several linting and formatting tools can be ran to ensure coding style consisten
 
 The `.github/workflows/ci.yaml` workflow ensures that the codebase is in good shape on each pull request and branch push.
 
-## 👷 Usage
+## 🏇Usage
 
 ### HTTP requests
 
