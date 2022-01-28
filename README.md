@@ -56,7 +56,7 @@ Several linting and formatting tools can be ran to ensure coding style consisten
 
 The `.github/workflows/ci.yaml` workflow ensures that the codebase is in good shape on each pull request and branch push.
 
-## 🏇Usage
+## 🏇 Usage
 
 ### HTTP requests
 
