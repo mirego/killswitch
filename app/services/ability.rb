@@ -9,9 +9,7 @@ class Ability
       can :manage, :all
 
       # Prevent from destroying super-admin organizations
-      cannot :destroy, Organization do |organization|
-        organization.super_admin?
-      end
+      cannot :destroy, Organization, &:super_admin?
     else
       organization_permissions
     end

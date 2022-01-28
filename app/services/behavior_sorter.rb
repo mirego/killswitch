@@ -29,7 +29,9 @@ protected
   end
 
   # Reset all order keys for the project
+  # rubocop:disable Rails/SkipsModelValidations
   def reset_all_orders
     @project.behaviors.update_all behavior_order: 0
   end
+  # rubocop:enable Rails/SkipsModelValidations
 end

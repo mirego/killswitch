@@ -26,7 +26,7 @@ protected
 
   def fetch_key
     @key = @request.params[:key]
-    raise MissingParameter, 'Missing or invalid “key” parameter' unless @key.present?
+    raise MissingParameter, 'Missing or invalid “key” parameter' if @key.blank?
   end
 
   def fetch_project
@@ -37,11 +37,11 @@ protected
     available_languages = @project.behaviors.pluck(:language).compact.uniq
     return unless available_languages.any?
 
-    if params[:http_accept_language].present?
-      language_matcher = Rack::Accept::Language.new(params[:http_accept_language])
-    else
-      language_matcher = @request.env['rack-accept.request'].language
-    end
+    language_matcher = if params[:http_accept_language].present?
+                         Rack::Accept::Language.new(params[:http_accept_language])
+                       else
+                         @request.env['rack-accept.request'].language
+                       end
 
     language_matcher.first_level_match = true
     @language = language_matcher.best_of(available_languages)

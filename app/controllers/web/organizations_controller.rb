@@ -13,8 +13,7 @@ class Web::OrganizationsController < Web::ApplicationController
   end
 
   # GET /organizations/:id/edit
-  def edit
-  end
+  def edit; end
 
   # POST /organizations
   def create

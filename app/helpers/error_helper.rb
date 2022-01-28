@@ -14,6 +14,6 @@ module ErrorHelper
       else
         line
       end
-    end.join("\n").html_safe
+    end.safe_join("\n")
   end
 end

@@ -18,11 +18,13 @@ module Killswitch
     config.i18n.default_locale = :en
 
     # Do not wrap erroenous form fields with a div
-    config.action_view.field_error_proc = lambda { |html_tag, _| "#{html_tag}".html_safe }
+    # rubocop:disable Rails/OutputSafety
+    config.action_view.field_error_proc = lambda { |html_tag, _| html_tag.to_s.html_safe }
+    # rubocop:enable Rails/OutputSafety
 
     # Custom exceptions
-    config.action_dispatch.rescue_responses.merge! 'BehaviorDispatcher::MissingParameter' => :bad_request
-    config.action_dispatch.rescue_responses.merge! 'CanCan::AccessDenied' => :forbidden
+    config.action_dispatch.rescue_responses['BehaviorDispatcher::MissingParameter'] = :bad_request
+    config.action_dispatch.rescue_responses['CanCan::AccessDenied'] = :forbidden
 
     # Force SSL on everything except '/killswitch' endpoint
     if Rails.application.secrets.force_ssl

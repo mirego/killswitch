@@ -5,7 +5,7 @@ class AssetHost
     @protocol = configuration.protocol
 
     options = { host: @host, scheme: @protocol }
-    options.merge! port: @port if @port.present?
+    options[:port] = @port if @port.present?
 
     @uri = URI::Generic.build(options)
   end

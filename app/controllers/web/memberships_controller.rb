@@ -8,8 +8,7 @@ class Web::MembershipsController < Web::ApplicationController
   end
 
   # GET /memberships/:id/edit
-  def edit
-  end
+  def edit; end
 
   # PUT /memberships/:id
   # PATCH /memberships/:id

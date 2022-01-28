@@ -44,12 +44,10 @@ class Web::ApplicationsController < Web::ApplicationController
   end
 
   # GET /applications/:id/edit
-  def edit
-  end
+  def edit; end
 
   # GET /applications/:id
-  def show
-  end
+  def show; end
 
 protected
 
