@@ -105,4 +105,4 @@ check-dependencies-security:
 
 .PHONY: check-code-security
 check-code-security:
-	bundle exec brakeman --no-pager
+	bundle exec brakeman

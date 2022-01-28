@@ -1,0 +1,4 @@
+---
+:skip_checks:
+  - CheckCookieSerialization
+:pager: false
