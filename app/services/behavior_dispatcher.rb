@@ -20,7 +20,7 @@ protected
 
   def fetch_version
     @version = Versionomy.parse(@request.params[:version])
-  rescue
+  rescue StandardError
     raise MissingParameter, 'Missing or invalid “version” parameter'
   end
 

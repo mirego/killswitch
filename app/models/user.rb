@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   # Validations
   validates :name, presence: true
   validates :email, presence: true, email: true, uniqueness: { scope: [:deleted_at] }

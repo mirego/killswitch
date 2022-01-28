@@ -1,8 +1,11 @@
+require: rubocop-rails
+
 AllCops:
   Include:
     - Rakefile
     - config.ru
     - Gemfile
+    - '**/*.rb'
   Exclude:
     - bin/**
     - db/schema.rb
@@ -11,51 +14,45 @@ AllCops:
     - vendor/**/*
     - node_modules/**/*
 
-Rails:
-  Enabled: true
-
-Documentation:
+Style/Documentation:
   Enabled: false
 
-Encoding:
+Style/Encoding:
   Enabled: false
 
-LineLength:
+Layout/LineLength:
   Max: 200
 
-AccessModifierIndentation:
+Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
 
-IfUnlessModifier:
-  Enabled: false
-
-CaseIndentation:
+Layout/CaseIndentation:
   EnforcedStyle: case
   IndentOneStep: true
 
-MethodLength:
+Metrics/MethodLength:
   CountComments: false
   Max: 20
 
-SignalException:
+Style/SignalException:
   Enabled: false
 
-ColonMethodCall:
+Style/ColonMethodCall:
   Enabled: false
 
-AsciiComments:
+Style/AsciiComments:
   Enabled: false
 
-RegexpLiteral:
+Style/RegexpLiteral:
   Enabled: false
 
-AssignmentInCondition:
+Lint/AssignmentInCondition:
   Enabled: false
 
-ParameterLists:
+Metrics/ParameterLists:
   CountKeywordArgs: false
 
-SingleLineBlockParams:
+Style/SingleLineBlockParams:
   Methods:
     - reduce:
         - memo
@@ -70,7 +67,7 @@ Style/CollectionMethods:
 Style/SymbolArray:
   Enabled: false
 
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Enabled: true
 
 Style/Lambda:
@@ -79,7 +76,7 @@ Style/Lambda:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-Performance/Sample:
+Style/Sample:
   Enabled: false
 
 Style/PercentLiteralDelimiters:
@@ -91,3 +88,15 @@ Style/PercentLiteralDelimiters:
 Metrics/BlockLength:
   Exclude:
     - '**/*_spec.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false

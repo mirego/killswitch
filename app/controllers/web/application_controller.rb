@@ -32,6 +32,7 @@ protected
   # Returns the path only if it responds to GET requests. Otherwise returns root.
   def safe_redirect_path(path)
     return root_path if path.blank?
+
     Rails.application.routes.recognize_path(path, method: :get)
   rescue ActionController::RoutingError
     root_path

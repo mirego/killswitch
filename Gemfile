@@ -39,6 +39,7 @@ group :development, :test do
   gem 'parser', '2.6.5.0'
   gem 'rspec-rails', '~> 5.0'
   gem 'rubocop', '~> 0.49'
+  gem 'rubocop-rails', require: false
 end
 
 group :development do

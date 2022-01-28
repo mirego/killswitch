@@ -1,6 +1,6 @@
 class Web::MembershipsController < Web::ApplicationController
   before_action :fetch_organization
-  before_action :fetch_membership, only: [:show, :update, :edit, :destroy]
+  before_action :fetch_membership, only: [:update, :edit, :destroy]
 
   # GET /memberships
   def index

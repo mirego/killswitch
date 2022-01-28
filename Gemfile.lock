@@ -256,6 +256,10 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-rails (2.5.2)
+      activesupport
+      rack (>= 1.1)
+      rubocop (>= 0.72.0)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     sass (3.4.25)
@@ -342,6 +346,7 @@ DEPENDENCIES
   ranked-model
   rspec-rails (~> 5.0)
   rubocop (~> 0.49)
+  rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
   sentry-ruby

@@ -2,7 +2,7 @@ class Web::BehaviorsController < Web::ApplicationController
   before_action :fetch_organization
   before_action :fetch_application
   before_action :fetch_project
-  before_action :fetch_behavior, only: [:show, :update, :edit, :destroy]
+  before_action :fetch_behavior, only: [:update, :edit, :destroy]
 
   # GET /applications/:application_id/projects/:project_id/behaviors/new
   def new
