@@ -1,6 +1,6 @@
-class Application < ActiveRecord::Base
+class Application < ApplicationRecord
   # Associations
-  has_many :projects, -> { ascendingly }, dependent: :destroy
+  has_many :projects, -> { ascendingly }, dependent: :destroy, inverse_of: :application
   belongs_to :organization, counter_cache: true
 
   # Validations

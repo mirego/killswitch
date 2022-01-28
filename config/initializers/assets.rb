@@ -14,7 +14,7 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 # Make sure we precompile vendor font assets
-Rails.application.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+Rails.application.config.assets.paths << Rails.root.join('vendor/assets/fonts')
 Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
 # Make sure we compile other top-level assets

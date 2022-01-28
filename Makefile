@@ -95,3 +95,14 @@ lint-scripts:
 .PHONY: lint-styles
 lint-styles:
 	npx stylelint $(STYLES_PATTERN)
+
+.PHONY: check
+check: check-dependencies-security check-code-security
+
+.PHONY: check-dependencies-security
+check-dependencies-security:
+	bundle exec bundle-audit check --update
+
+.PHONY: check-code-security
+check-code-security:
+	bundle exec brakeman

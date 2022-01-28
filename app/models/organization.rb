@@ -1,6 +1,6 @@
-class Organization < ActiveRecord::Base
+class Organization < ApplicationRecord
   # Associations
-  has_many :applications, -> { ascendingly }, dependent: :destroy
+  has_many :applications, -> { ascendingly }, dependent: :destroy, inverse_of: :organization
 
   # FriendlyId
   extend FriendlyId

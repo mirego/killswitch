@@ -8,6 +8,7 @@ require File.expand_path('../../app/utilities/boolean_environment_variable', __F
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# rubocop:disable Style/IfUnlessModifier
 module Killswitch
   class Application < Rails::Application
     VERSION = '1.0.0'.freeze
@@ -68,3 +69,4 @@ module Killswitch
     }
   end
 end
+# rubocop:enable Style/IfUnlessModifier

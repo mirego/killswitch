@@ -1,9 +1,11 @@
-class Membership < ActiveRecord::Base
+class Membership < ApplicationRecord
   # Camaraderie
   acts_as_membership
   # NOTE: This association is defined by the `acts_as_membership` method above.
   # However, we need to redefine it because we add `counter_cache`.
+  # rubocop:disable Rails/ReflectionClassName
   belongs_to :organization, class_name: Camaraderie.organization_class, inverse_of: :memberships, counter_cache: true
+  # rubocop:enable Rails/ReflectionClassName
 
   # Callbacks
   after_initialize { build_user if new_record? && user.blank? }

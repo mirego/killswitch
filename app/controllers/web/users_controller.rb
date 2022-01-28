@@ -1,5 +1,5 @@
 class Web::UsersController < Web::ApplicationController
-  before_action :fetch_user, only: [:show, :update, :edit, :destroy]
+  before_action :fetch_user, only: [:update, :edit]
 
   # GET /users/:id/edit
   def edit; end

@@ -3,11 +3,9 @@ module HtmlHelper
     content_tag(:i, '', class: "fa fa-#{name.to_s.tr('_', '-')}") + label.presence.try(:prepend, '  ')
   end
 
-  # rubocop:disable Rails/OutputSafety
   def nav_active_item?(item)
     ' class="active"'.html_safe if item == content_for(:nav_active_item).try(:to_sym)
   end
-  # rubocop:enable Rails/OutputSafety
 
   def page_title(base: '')
     parts = []
