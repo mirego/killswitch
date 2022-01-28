@@ -43,6 +43,7 @@ describe BehaviorDispatcher do
         env['HTTP_ACCEPT_LANGUAGE'] = language
         env['action_dispatch.request.parameters'] = params
         env['rack-accept.request'] = Rack::Accept::Request.new(env)
+        env
       end
 
       let(:params) { { key: project.key, version: '5.0.0' } }
