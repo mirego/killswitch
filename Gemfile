@@ -27,16 +27,18 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sprockets-es6'
 gem 'turbolinks', '~> 5.0'
-gem 'uglifier'
+gem 'uglifier', '~> 2.7'
 gem 'versionomy'
 
 group :development, :test do
+  gem 'brakeman'
+  gem 'bundler-audit'
   gem 'database_cleaner-active_record'
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'parser', '2.6.5.0'
   gem 'rspec-rails', '~> 5.0'
-  gem 'rubocop', '0.48.1'
+  gem 'rubocop', '~> 0.49'
 end
 
 group :development do

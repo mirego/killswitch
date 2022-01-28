@@ -38,6 +38,7 @@ jobs:
         with:
           bundler-cache: true
       - run: npm install
+      - run: make check
       - run: make lint
       - run: make test
       - run: make build
