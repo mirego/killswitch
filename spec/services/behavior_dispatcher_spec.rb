@@ -40,9 +40,9 @@ describe BehaviorDispatcher do
       let(:request) { ActionDispatch::TestRequest.new(env) }
       let(:env) do
         env = ActionDispatch::TestRequest::DEFAULT_ENV
-        env.merge! 'HTTP_ACCEPT_LANGUAGE' => language
-        env.merge! 'action_dispatch.request.parameters' => params
-        env.merge! 'rack-accept.request' => Rack::Accept::Request.new(env)
+        env['HTTP_ACCEPT_LANGUAGE'] = language
+        env['action_dispatch.request.parameters'] = params
+        env['rack-accept.request'] = Rack::Accept::Request.new(env)
       end
 
       let(:params) { { key: project.key, version: '5.0.0' } }

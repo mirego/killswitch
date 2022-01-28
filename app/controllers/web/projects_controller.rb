@@ -30,12 +30,10 @@ class Web::ProjectsController < Web::ApplicationController
   end
 
   # GET /applications/:application_id/projects/:id/edit
-  def edit
-  end
+  def edit; end
 
   # GET /applications/:application_id/projects/:id
-  def show
-  end
+  def show; end
 
   # GET /applications/:application_id/projects/:id
   def destroy

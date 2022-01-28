@@ -13,5 +13,5 @@ class Organization < ActiveRecord::Base
   acts_as_organization
 
   # Scopes
-  scope :ascendingly, -> { order(Arel.sql('lower(name) asc')) }
+  scope(:ascendingly, -> { order(Arel.sql('lower(name) asc')) })
 end

@@ -5,7 +5,7 @@ module Sprockets
       'modules' => 'amd',
       'keepModuleIdExtensions' => false,
       'loose' => %w(es6.classes)
-    }
+    }.freeze
 
     def self.instance
       @instance ||= new(DEFAULT_OPTIONS)

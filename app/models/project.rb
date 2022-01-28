@@ -17,5 +17,5 @@ class Project < ActiveRecord::Base
   has_paper_trail
 
   # Scopes
-  scope :ascendingly, -> { order(name: :asc) }
+  scope(:ascendingly, -> { order(name: :asc) })
 end

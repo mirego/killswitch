@@ -2,8 +2,7 @@ class Web::UsersController < Web::ApplicationController
   before_action :fetch_user, only: [:show, :update, :edit, :destroy]
 
   # GET /users/:id/edit
-  def edit
-  end
+  def edit; end
 
   # PUT /users/:id
   # PATCH /users/:id

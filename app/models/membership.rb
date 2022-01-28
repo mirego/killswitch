@@ -11,7 +11,7 @@ class Membership < ActiveRecord::Base
   after_validation :restore_user, on: :create, if: lambda { errors.any? }
 
   # Scopes
-  scope :oldest, -> { order(created_at: :asc) }
+  scope(:oldest, -> { order(created_at: :asc) })
 
 protected
 

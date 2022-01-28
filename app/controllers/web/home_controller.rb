@@ -2,7 +2,7 @@ class Web::HomeController < Web::ApplicationController
   skip_before_action :authenticate_user!
 
   def show
-    return unless current_user.present?
+    return if current_user.blank?
 
     organization = current_user.organizations.first
     redirect_to web_organization_applications_path(organization_id: organization)

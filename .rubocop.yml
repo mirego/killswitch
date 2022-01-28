@@ -10,7 +10,9 @@ AllCops:
     - script/**
     - vendor/**/*
     - node_modules/**/*
-  RunRailsCops: true
+
+Rails:
+  Enabled: true
 
 Documentation:
   Enabled: false
@@ -28,7 +30,7 @@ IfUnlessModifier:
   Enabled: false
 
 CaseIndentation:
-  IndentWhenRelativeTo: case
+  EnforcedStyle: case
   IndentOneStep: true
 
 MethodLength:
@@ -79,3 +81,13 @@ Style/ClassAndModuleChildren:
 
 Performance/Sample:
   Enabled: false
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: '()'
+    '%w': '()'
+    '%i': '()'
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'

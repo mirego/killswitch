@@ -1,9 +1,9 @@
 class Behavior < ActiveRecord::Base
   # Constants
-  VERSION_OPERATORS = { 'lt' => :<, 'lte' => :<=, 'eq' => :==, 'gte' => :>=, 'gt' => :> }
-  TIME_OPERATORS = { 'lt' => :<, 'gt' => :> }
-  LANGUAGES = %w(fr en de es it pt)
-  DATA_JSON_SCHEMA = Rails.root.join('config/schemas/behavior_data.jsonschema').to_s
+  VERSION_OPERATORS = { 'lt' => :<, 'lte' => :<=, 'eq' => :==, 'gte' => :>=, 'gt' => :> }.freeze
+  TIME_OPERATORS = { 'lt' => :<, 'gt' => :> }.freeze
+  LANGUAGES = %w(fr en de es it pt).freeze
+  DATA_JSON_SCHEMA = Rails.root.join('config', 'schemas', 'behavior_data.jsonschema').to_s
 
   # Validations
   validates :project, presence: true
@@ -26,7 +26,7 @@ class Behavior < ActiveRecord::Base
   has_paper_trail
 
   # Scopes
-  scope :ascendingly, -> { rank(:behavior_order) }
+  scope(:ascendingly, -> { rank(:behavior_order) })
 
   def self.format_invalid_json_errors(errors)
     errors = errors.map { |error| error }.join(', ')

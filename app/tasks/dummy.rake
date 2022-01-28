@@ -1,5 +1,5 @@
 namespace :dummy do
-  task all: :environment  do
+  task all: :environment do
     # Mirego
     mirego = Organization.where(name: 'Mirego', super_admin: true).first_or_create
 

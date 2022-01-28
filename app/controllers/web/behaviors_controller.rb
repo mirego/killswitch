@@ -10,8 +10,7 @@ class Web::BehaviorsController < Web::ApplicationController
   end
 
   # GET /applications/:application_id/projects/:project_id/behaviors/:id
-  def edit
-  end
+  def edit; end
 
   # POST /applications/:application_id/projects/:project_id/behaviors
   def create
