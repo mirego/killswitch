@@ -1,4 +1,4 @@
-class Behavior < ActiveRecord::Base
+class Behavior < ApplicationRecord
   # Constants
   VERSION_OPERATORS = { 'lt' => :<, 'lte' => :<=, 'eq' => :==, 'gte' => :>=, 'gt' => :> }.freeze
   TIME_OPERATORS = { 'lt' => :<, 'gt' => :> }.freeze
