@@ -11,6 +11,7 @@ Bundler.require(:default, Rails.env)
 # rubocop:disable Style/IfUnlessModifier
 module Killswitch
   class Application < Rails::Application
+    # Version
     VERSION = '1.0.0'.freeze
 
     config.load_defaults 6.0
