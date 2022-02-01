@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.7'
+ruby '2.7.5'
 
 gem 'activerecord_json_validator', '1.3.0'
 gem 'autoprefixer-rails', '6.4.0.1'
@@ -36,7 +36,7 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'parser', '2.6.5.0'
+  gem 'parser', '~> 2.7'
   gem 'rspec-rails', '~> 5.0'
   gem 'rubocop', '~> 0.49'
   gem 'rubocop-rails', require: false
