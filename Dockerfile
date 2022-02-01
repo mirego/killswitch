@@ -1,4 +1,4 @@
-FROM ruby:2.6.7-alpine3.13
+FROM ruby:2.7.5-alpine3.13
 
 # Install runtime dependencies
 RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs npm tzdata postgresql-dev
