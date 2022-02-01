@@ -29,13 +29,13 @@ When running `rails`, `rake` or `make` commands, it is important that these vari
 ### Initial setup
 
 1. Create both `.env.dev.local` and `.env.test.local` from empty values in [`.env.dev`](./.env.dev) and [`.env.test`](./.env.test)
-2. Install Mix and NPM dependencies with `make dependencies`
+2. Install Ruby and NPM dependencies with `make dependencies`
 3. Generate values for mandatory secrets in [`.env.dev`](./.env.dev) with `rake secret`
 
 Then, with variables from `.env.dev` and `.env.dev.local` present in the environment:
 
 4. Create and migrate the database with `rake db:setup`
-5. Start the Phoenix server with `rails s`
+5. Start the Rails server with `rails s`
 
 ### `make` commands
 
