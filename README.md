@@ -37,6 +37,14 @@ Then, with variables from `.env.dev` and `.env.dev.local` present in the environ
 4. Create and migrate the database with `rake db:setup`
 5. Start the Rails server with `rails s`
 
+### Sample data
+
+You can use the `sample_data:create` Rake task to create an organization, an admin user and a few applications.
+
+```shell-session
+$ KILLSWITCH_SAMPLE_DATA_EMAIL=foo@example.com KILLSWITCH_SAMPLE_DATA_PASSWORD=p@ssw0rd rake sample_data:create
+```
+
 ### `make` commands
 
 A `Makefile` is present at the root and expose common tasks. The list of these commands is available with `make help`.
