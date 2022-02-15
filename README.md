@@ -210,6 +210,12 @@ The project exposes a `GET /health` route that contains checks to make sure the 
 
 A Docker image can be created with `make build` and pushed to a registry with `make push`.
 
+[Official Docker images](https://github.com/mirego/killswitch/pkgs/container/killswitch) can be pulled from GitHub Container registry. For example, to get the latest `master` image:
+
+```shell-session
+$ docker pull ghcr.io/mirego/killswitch:latest
+```
+
 ## License
 
 Killswitch is © 2013-2022 [Mirego](https://www.mirego.com) and may be freely distributed under the [New BSD license](http://opensource.org/licenses/BSD-3-Clause). See the [`LICENSE.md`](https://github.com/mirego/killswitch/blob/master/LICENSE.md) file.

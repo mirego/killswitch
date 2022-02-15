@@ -1,0 +1,31 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - 'master'
+    tags:
+      - 'v*'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+
+    env:
+      DOCKER_USERNAME: mirego-builds
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log in to registry
+        run: echo "${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}" | docker login ghcr.io -u $DOCKER_USERNAME --password-stdin
+
+      - name: Build and push image
+        run: |
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention for master
+          [ "$VERSION" == "master" ] && VERSION=latest
+          VERSION=$VERSION make build
+          VERSION=$VERSION make push
