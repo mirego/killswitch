@@ -1,0 +1,36 @@
+name: CD
+
+on:
+  push:
+    branches:
+      - 'master'
+    tags:
+      - 'v*'
+    pull_request:
+      - 'feature/ghcr-package'
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build image
+        run: make build
+
+      - name: Log in to registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Push image
+        run: |
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+          # Use Docker `latest` tag convention for master
+          [ "$VERSION" == "master" ] && VERSION=latest
+          VERSION=$VERSION make
+          VERSION=$VERSION make push
