@@ -4,22 +4,22 @@ on:
   push:
     branches:
       - 'master'
-      - 'feature/ghcr-package'
+      - 'feature/ghcr-package' # TEMPORARY: To make sure we merge a green PR
     tags:
       - 'v*'
 
 jobs:
   push:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
+
+    env:
+      DOCKER_USERNAME: mirego-builds
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Log in to registry
-        run: echo "${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}" | docker login ghcr.io -u $DOCKER_USERNAME --password-stdin
 
       - name: Build and push image
         run: |
@@ -28,7 +28,7 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention for master
           [ "$VERSION" == "master" ] && VERSION=latest
-          # This is temporary — always build “latest”
+          # TEMPORARY: Always build “latest”
           VERSION=latest
           VERSION=$VERSION make
           VERSION=$VERSION make build
