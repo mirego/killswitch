@@ -28,6 +28,8 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention for master
           [ "$VERSION" == "master" ] && VERSION=latest
+          # This is temporary — always build “latest”
+          VERSION=latest
           VERSION=$VERSION make
           VERSION=$VERSION make build
           VERSION=$VERSION make push
