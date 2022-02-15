@@ -11,14 +11,15 @@ jobs:
   push:
     runs-on: ubuntu-latest
 
-    env:
-      DOCKER_USERNAME: mirego-builds
-
     steps:
       - uses: actions/checkout@v2
 
-      - name: Log in to registry
-        run: echo "${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}" | docker login ghcr.io -u $DOCKER_USERNAME --password-stdin
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: mirego-builds
+          password: ${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}
 
       - name: Build and push image
         run: |
