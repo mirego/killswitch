@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'master'
-      - 'feature/ghcr-package' # TEMPORARY: To make sure we merge a green PR
     tags:
       - 'v*'
 
@@ -28,8 +27,5 @@ jobs:
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
           # Use Docker `latest` tag convention for master
           [ "$VERSION" == "master" ] && VERSION=latest
-          # TEMPORARY: Always build “latest”
-          VERSION=latest
-          VERSION=$VERSION make
           VERSION=$VERSION make build
           VERSION=$VERSION make push
