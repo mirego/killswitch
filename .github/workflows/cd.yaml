@@ -28,7 +28,7 @@ jobs:
           echo "::set-output name=tag::$TAG"
 
   build:
-    needs: docker-tag
+    needs: set-docker-tag
     runs-on: ubuntu-latest
     env:
       DOCKER_TAG: ${{needs.set-docker-tag.outputs.tag}}
