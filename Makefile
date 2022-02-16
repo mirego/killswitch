@@ -1,9 +1,9 @@
 # Build configuration
 # -------------------
 
-VERSION ?= `git rev-parse HEAD`
+DOCKER_TAG ?= `git rev-parse HEAD`
 DOCKER_REGISTRY = ghcr.io
-DOCKER_LOCAL_IMAGE = mirego/killswitch:$(VERSION)
+DOCKER_LOCAL_IMAGE = mirego/killswitch:$(DOCKER_TAG)
 DOCKER_REMOTE_IMAGE = $(DOCKER_REGISTRY)/$(DOCKER_LOCAL_IMAGE)
 
 # Linter and formatter configuration
@@ -23,8 +23,8 @@ help: header targets
 header:
 	@echo "\033[34mEnvironment\033[0m"
 	@echo "\033[34m---------------------------------------------------------------\033[0m"
-	@printf "\033[33m%-23s\033[0m" "VERSION"
-	@printf "\033[35m%s\033[0m" $(VERSION)
+	@printf "\033[33m%-23s\033[0m" "DOCKER_TAG"
+	@printf "\033[35m%s\033[0m" $(DOCKER_TAG)
 	@echo ""
 	@printf "\033[33m%-23s\033[0m" "DOCKER_REGISTRY"
 	@printf "\033[35m%s\033[0m" $(DOCKER_REGISTRY)
