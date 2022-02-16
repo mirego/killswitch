@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'master'
-      - 'feature/add-better-structure-to-cd-workflow' # TEMPORARY
     tags:
       - 'v*'
 
@@ -17,13 +16,13 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Set Docker tag
         id: tag
         run: |
           TAG=$(echo "${{github.ref}}" | sed -e 's,.*/\(.*\),\1,')
           [[ "${{github.ref}}" == "refs/tags/"* ]] && TAG=$(echo $TAG | sed -e 's/^v//')
           [ "$TAG" == "master" ] && TAG=latest
-          # TEMPORARY
           TAG=latest
           echo "::set-output name=tag::$TAG"
 
@@ -35,13 +34,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Build Docker image
         run: make build
+
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: mirego-builds
-          password: ${{ secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN }}
+          password: ${{secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN}}
+
       - name: Push Docker image
         run: make push
