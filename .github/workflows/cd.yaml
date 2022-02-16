@@ -31,7 +31,7 @@ jobs:
     needs: set-docker-tag
     runs-on: ubuntu-latest
     env:
-      DOCKER_TAG: ${{needs.set-docker-tag.outputs.tag}}
+      DOCKER_TAG: ${{needs.set-docker-tag.outputs.docker-tag}}
 
     steps:
       - uses: actions/checkout@v2
