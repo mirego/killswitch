@@ -26,7 +26,7 @@ jobs:
           TAG=latest
           echo "::set-output name=tag::$TAG"
 
-  build_and_push:
+  build-and-push:
     needs: docker-tag
     runs-on: ubuntu-latest
     env:
