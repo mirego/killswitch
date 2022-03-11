@@ -279,7 +279,7 @@ GEM
     sentry-ruby-core (4.6.1)
       concurrent-ruby
       faraday
-    spring (1.2.0)
+    spring (4.0.0)
     spring-commands-rspec (1.0.1)
       spring (>= 0.9.1)
     sprockets (3.7.2)
