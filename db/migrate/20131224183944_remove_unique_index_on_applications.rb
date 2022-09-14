@@ -1,4 +1,4 @@
-class RemoveUniqueIndexOnApplications < ActiveRecord::Migration
+class RemoveUniqueIndexOnApplications < ActiveRecord::Migration[4.2]
   def up
     remove_index :applications, :slug
   end
