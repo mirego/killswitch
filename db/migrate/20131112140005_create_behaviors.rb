@@ -1,4 +1,4 @@
-class CreateBehaviors < ActiveRecord::Migration
+class CreateBehaviors < ActiveRecord::Migration[4.2]
   def change
     create_table :behaviors do |t|
       t.references :project

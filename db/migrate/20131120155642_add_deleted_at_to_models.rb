@@ -1,4 +1,4 @@
-class AddDeletedAtToModels < ActiveRecord::Migration
+class AddDeletedAtToModels < ActiveRecord::Migration[4.2]
   def change
     add_column :applications, :deleted_at, :datetime
     add_index :applications, [:slug, :deleted_at], name: "index_applications_on_slug_and_deleted_at"

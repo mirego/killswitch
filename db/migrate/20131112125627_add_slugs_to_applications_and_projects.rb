@@ -1,4 +1,4 @@
-class AddSlugsToApplicationsAndProjects < ActiveRecord::Migration
+class AddSlugsToApplicationsAndProjects < ActiveRecord::Migration[4.2]
   def change
     add_column :applications, :slug, :string
     add_column :projects, :slug, :string

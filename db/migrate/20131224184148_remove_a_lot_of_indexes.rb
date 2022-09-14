@@ -1,4 +1,4 @@
-class RemoveALotOfIndexes < ActiveRecord::Migration
+class RemoveALotOfIndexes < ActiveRecord::Migration[4.2]
   def up
     remove_index "applications", ["slug", "deleted_at"]
     remove_index "behaviors", ["id", "deleted_at"]

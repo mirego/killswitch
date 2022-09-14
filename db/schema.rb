@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_04_20_163300) do
     t.string "version_number"
     t.string "version_operator"
     t.string "language"
-    t.json "data", default: {}
+    t.json "data", default: "{}"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "behavior_order"
