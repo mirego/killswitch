@@ -15,6 +15,6 @@ module ErrorHelper
       else
         line
       end
-    end.safe_join("\n")
+    end.join("\n")
   end
 end
