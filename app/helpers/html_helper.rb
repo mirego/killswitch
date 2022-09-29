@@ -23,4 +23,8 @@ module HtmlHelper
   def bool_icon(value)
     value ? icon(:check) : nil
   end
+
+  def version
+    "v#{Killswitch::Application::VERSION}"
+  end
 end
