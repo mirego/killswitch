@@ -1,4 +1,8 @@
 module HtmlHelper
+  def logo(options = {})
+    render partial: 'shared/logo', locals: { options: options }
+  end
+
   def icon(name, label = nil)
     content_tag(:i, '', class: "fa fa-#{name.to_s.tr('_', '-')}") + label.presence.try(:prepend, '  ')
   end

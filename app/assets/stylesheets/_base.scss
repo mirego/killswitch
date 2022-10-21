@@ -68,3 +68,14 @@ pre {
   overflow-y: auto;
   max-height: 400px;
 }
+
+.navbar-brand-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-brand-image {
+  width: 20px;
+  height: 20px;
+  margin: 0 10px 0 0;
+}
