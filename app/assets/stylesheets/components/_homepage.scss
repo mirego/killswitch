@@ -15,16 +15,18 @@
 
 .homepage-logo {
   display: block;
-  margin: 0 0 20px;
+  margin: 0 0 40px;
   outline: none;
-  font-size: 240px;
-  line-height: 1;
-  color: #fff;
 
   &:focus,
   &:hover {
-    color: rgba(#fff, 0.9);
+    opacity: 0.9;
   }
+}
+
+.homepage-logo-image {
+  width: 300px;
+  height: 300px;
 }
 
 .homepage-intro {

@@ -19,7 +19,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to icon(:shield, t('.app_title')), root_path, class: 'navbar-brand' %>
+          <%= link_to root_path, class: 'navbar-brand' do %>
+            <div class="navbar-brand-wrap">
+              <%= logo(class: 'navbar-brand-image') %>
+              <%= t('.app_title') %>
+            </div>
+          <% end %>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <% if current_user.present? %>
