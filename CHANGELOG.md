@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [Unreleased]
+
+- Update logo
+
 ## [1.0.8] - 2022-10-18
 
 - Update vulnerable Nokogiri version to 1.13.9
