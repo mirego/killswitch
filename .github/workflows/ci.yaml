@@ -56,5 +56,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
-          format: github
+          ignore-unfixed: true
+          format: table
+          severity: 'CRITICAL,HIGH'
           exit-code: 1
