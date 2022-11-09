@@ -27,8 +27,10 @@ jobs:
           image-ref: 'mirego/killswitch:${{ github.sha }}'
           format: sarif
           output: 'vuln-scan-results.sarif'
-          exit-code: 1
           vuln-type: 'os,library'
+
+      - name: Display Scan Results
+        run: cat vuln-scan-results.sarif
 
       - name: Upload Scan Results to GitHub Security Tab
         uses: github/codeql-action/upload-sarif@v2
