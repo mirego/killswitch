@@ -56,7 +56,6 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
-          hide-progress: false
           format: sarif
           output: 'conf-scan-results.sarif'
           exit-code: 1

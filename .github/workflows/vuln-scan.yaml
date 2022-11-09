@@ -25,7 +25,6 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'mirego/killswitch:${{ github.sha }}'
-          hide-progress: false
           format: sarif
           output: 'vuln-scan-results.sarif'
           exit-code: 1
