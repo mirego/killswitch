@@ -56,11 +56,5 @@ jobs:
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
-          format: sarif
-          output: 'conf-scan-results.sarif'
+          format: github
           exit-code: 1
-
-      - name: Upload Scan Results to GitHub Security Tab
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: 'conf-scan-results.sarif'
