@@ -1,0 +1,37 @@
+name: "Vulnerability Scan"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - '**'
+  schedule:
+    - cron: '30 13 * * 3'
+
+jobs:
+  vuln-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - name: Build Docker image
+        run: make build
+
+      - name: Perform Vulnerability Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'mirego/killswitch:${{ github.sha }}'
+          hide-progress: false
+          format: sarif
+          output: 'vuln-scan-results.sarif'
+          exit-code: 1
+          vuln-type: 'os,library'
+
+      - name: Upload Scan Results to GitHub Security Tab
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'vuln-scan-results.sarif'
