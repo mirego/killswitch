@@ -1,4 +1,4 @@
-name: "Vulnerability Scan"
+name: Vulnerability Scan
 
 on:
   push:
@@ -15,14 +15,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       
-      - name: Build Docker image
-        run: make build
+      - run: make build
 
-      - name: Perform Vulnerability Scan
-        uses: aquasecurity/trivy-action@master
+      - uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'mirego/killswitch:${{ github.sha }}'
           ignore-unfixed: true
@@ -30,10 +27,6 @@ jobs:
           output: 'vuln-scan-results.sarif'
           vuln-type: 'os,library'
 
-      - name: Display Scan Results
-        run: cat vuln-scan-results.sarif
-
-      - name: Upload Scan Results to GitHub Security Tab
-        uses: github/codeql-action/upload-sarif@v2
+      - uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'vuln-scan-results.sarif'

@@ -33,17 +33,14 @@ jobs:
       RAILS_ENV: test
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
       
-      - name: Set NodeJS Up
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
           cache: npm
       
-      - name: Set Ruby Up
-        uses: ruby/setup-ruby@v1
+      - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
       - run: npm install
@@ -52,8 +49,7 @@ jobs:
       - run: make test
       - run: make build
 
-      - name: Perform Configuration Files Scan
-        uses: aquasecurity/trivy-action@master
+      - uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'config'
           ignore-unfixed: true
