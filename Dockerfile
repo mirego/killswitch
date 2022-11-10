@@ -5,11 +5,15 @@ RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs n
 
 # Copy all required files
 WORKDIR /opt/killswitch
-ADD . /opt/killswitch/
+COPY . /opt/killswitch/
 RUN mkdir -p /opt/killswitch/tmp
 
 # Install Ruby dependencies
 RUN bundle install --binstubs --without development test
+
+# Copy entrypoint script
+COPY scripts/docker-entrypoint.sh /usr/local/bin
+RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
 # Create user
 RUN adduser -D killswitch
@@ -21,11 +25,6 @@ RUN npm install
 
 # Pre-compile assets
 RUN SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
-
-# Copy entrypoint script
-COPY scripts/docker-entrypoint.sh /usr/local/bin
-USER root
-RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
 # Execute entrypoint script
 ENTRYPOINT ["docker-entrypoint.sh"]
