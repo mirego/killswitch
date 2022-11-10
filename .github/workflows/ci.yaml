@@ -55,4 +55,5 @@ jobs:
           ignore-unfixed: true
           format: table
           severity: 'CRITICAL,HIGH'
+          skip-dirs: vendor,node_modules
           exit-code: 1
