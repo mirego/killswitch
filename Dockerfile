@@ -1,4 +1,4 @@
-FROM ruby:2.7.5-alpine3.13
+FROM ruby:2.7.6-alpine3.16
 
 # Install runtime dependencies
 RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs npm tzdata postgresql-dev
@@ -7,6 +7,9 @@ RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs n
 WORKDIR /opt/killswitch
 COPY . /opt/killswitch/
 RUN mkdir -p /opt/killswitch/tmp
+
+# Update Ruby-provided Bundler version (via rubygems update)
+RUN gem update --system 3.0.8 && gem update --system
 
 # Install Ruby dependencies
 RUN bundle install --binstubs --without development test
