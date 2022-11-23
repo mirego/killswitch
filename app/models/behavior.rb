@@ -3,7 +3,7 @@ class Behavior < ApplicationRecord
   VERSION_OPERATORS = { 'lt' => :<, 'lte' => :<=, 'eq' => :==, 'gte' => :>=, 'gt' => :> }.freeze
   TIME_OPERATORS = { 'lt' => :<, 'gt' => :> }.freeze
   LANGUAGES = %w(fr en de es it pt).freeze
-  DATA_JSON_SCHEMA = Rails.root.join('config', 'schemas', 'behavior_data.jsonschema')
+  DATA_JSON_SCHEMA = Rails.root.join('config/schemas/behavior_data.jsonschema')
 
   # Validations
   validates :project, presence: true
