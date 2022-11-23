@@ -1,54 +1,41 @@
 {
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
-  "$schema": "http://json-schema.org/draft-03/schema",
-  "id": "#",
-  "required": false,
-  "additionalProperties": false,
   "properties": {
     "action": {
       "type": "string",
-      "id": "action",
-      "required": true,
       "pattern": "^(ok|kill|alert)$"
     },
     "message": {
-      "type": "string",
-      "id": "message",
-      "required": false
+      "type": "string"
     },
     "buttons": {
       "type": "array",
-      "id": "buttons",
-      "required": false,
       "items": {
         "type": "object",
-        "id": "0",
-        "required": false,
-        "additionalProperties": false,
         "properties": {
-          "label": {
-            "type": "string",
-            "id": "label",
-            "required": true
-          },
           "type": {
-            "type": "label",
-            "id": "type",
-            "required": false,
+            "type": "string",
             "pattern": "^(url|cancel|reload)$"
           },
+          "label": {
+            "type": "string"
+          },
           "url": {
-            "type": "label",
-            "id": "url",
-            "required": false
+            "type": "string"
           },
           "order": {
-            "type": "number",
-            "id": "order",
-            "required": false
+            "type": "integer"
           }
-        }
+        },
+        "required": [
+          "type",
+          "label"
+        ]
       }
     }
-  }
+  },
+  "required": [
+    "action"
+  ]
 }

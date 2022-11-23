@@ -3,7 +3,7 @@ class Behavior < ApplicationRecord
   VERSION_OPERATORS = { 'lt' => :<, 'lte' => :<=, 'eq' => :==, 'gte' => :>=, 'gt' => :> }.freeze
   TIME_OPERATORS = { 'lt' => :<, 'gt' => :> }.freeze
   LANGUAGES = %w(fr en de es it pt).freeze
-  DATA_JSON_SCHEMA = Rails.root.join('config/schemas/behavior_data.jsonschema').to_s
+  DATA_JSON_SCHEMA = Rails.root.join('config', 'schemas', 'behavior_data.jsonschema')
 
   # Validations
   validates :project, presence: true
@@ -12,7 +12,7 @@ class Behavior < ApplicationRecord
   validates :time, presence: true, if: :time_operator?
   validates :time_operator, presence: true, inclusion: { in: TIME_OPERATORS.keys }, if: :time?
   validates :language, inclusion: { in: LANGUAGES }, allow_nil: true
-  validates :data, presence: true, json: { schema: DATA_JSON_SCHEMA, message: ->(errors) { format_invalid_json_errors(errors) } }
+  validates :data, presence: true, json: { schema: DATA_JSON_SCHEMA, message: ->(error) { error } }
 
   # Associations
   belongs_to :project
@@ -27,11 +27,6 @@ class Behavior < ApplicationRecord
 
   # Scopes
   scope(:ascendingly, -> { rank(:behavior_order) })
-
-  def self.format_invalid_json_errors(errors)
-    errors = errors.map { |error| error }.join(', ')
-    I18n.t('activerecord.errors.messages.invalid_json', errors: errors)
-  end
 
   # Make sure we set `language` to nil if we receive a blank value
   def language=(language)
