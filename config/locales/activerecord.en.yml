@@ -30,6 +30,5 @@ en:
         applications_count: Applications
     errors:
       messages:
-        invalid_json: is not valid JSON (%{errors})
         invalid_email: is not valid email address
         invalid_version: is not valid version number
