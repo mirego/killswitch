@@ -1,4 +1,3 @@
-# .github/workflows/sbom.yaml
 name: SBOM
 
 on:
