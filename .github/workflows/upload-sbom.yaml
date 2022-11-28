@@ -1,4 +1,5 @@
-name: Syft SBOM Creation
+# .github/workflows/sbom.yaml
+name: SBOM
 
 on:
   push:
