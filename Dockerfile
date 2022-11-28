@@ -1,7 +1,3 @@
-######################
-##### Base Stage #####
-######################
-
 FROM ruby:2.7.7-alpine3.16 AS base
 
 # Create and define work directory
@@ -11,9 +7,6 @@ WORKDIR /opt/killswitch
 RUN apk --update --no-cache add nodejs tzdata libpq && \
   gem update --system 3.0.8 && gem update --system
 
-#######################
-##### Build Stage #####
-#######################
 
 FROM base AS build
 
@@ -31,9 +24,6 @@ RUN apk --update --no-cache add --virtual build-dependencies build-base git node
 # Pre-compile assets
 RUN SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
 
-#########################
-##### Release Stage #####
-#########################
 
 FROM base AS release
 
