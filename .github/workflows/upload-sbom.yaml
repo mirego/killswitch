@@ -16,10 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build Docker image
-        run: make build
+      - run: make build
+        env:
+          DOCKER_TAG: sbom-snapshot
 
       - uses: anchore/sbom-action@latest
         with:
-          image: 'mirego/killswitch:${{ github.sha }}'
+          image: mirego/killswitch:sbom-snapshot
           dependency-snapshot: true
