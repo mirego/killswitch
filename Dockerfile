@@ -1,33 +1,46 @@
-FROM ruby:2.7.7-alpine3.16
+FROM ruby:2.7.7-alpine3.16 AS base
 
-# Install runtime dependencies
-RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs npm tzdata postgresql-dev
-
-# Copy all required files
+# Create and define work directory
 WORKDIR /opt/killswitch
+
+# Install OS dependencies
+RUN apk --update --no-cache add nodejs tzdata libpq && \
+  gem update --system 3.0.8 && gem update --system
+
+
+FROM base AS build
+
+# Copy only the minimal required files
 COPY . /opt/killswitch/
-RUN mkdir -p /opt/killswitch/tmp
 
-# Update Ruby-provided Bundler version (via rubygems update)
-RUN gem update --system 3.0.8 && gem update --system
+# Update system and install dependencies
+RUN apk --update --no-cache add --virtual build-dependencies build-base git nodejs npm postgresql-dev && \
+  bundle config set --local without 'development test' && \
+  bundle install && \
+  bundle binstubs --all && \
+  npm set progress=false && \
+  npm install --silent --production && \
+  SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
 
-# Install Ruby dependencies
-RUN bundle install --binstubs --without development test
+
+FROM base AS release
+
+COPY . .
+COPY --from=build /usr/local/bundle/ /usr/local/bundle/
+COPY --from=build /opt/killswitch/public/assets/ /opt/killswitch/public/assets/
+COPY --from=build /opt/killswitch/node_modules/ /opt/killswitch/node_modules/
 
 # Copy entrypoint script
 COPY scripts/docker-entrypoint.sh /usr/local/bin
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
 
 # Create user
-RUN adduser -D killswitch
-RUN chown -R killswitch: /opt/killswitch
+RUN adduser -D -h /opt/killswitch -u 5000 killswitch && \
+  chown -R killswitch: /opt/killswitch
+
 USER killswitch
 
-# Install JavaScript dependencies
-RUN npm install
-
-# Pre-compile assets
-RUN SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
+HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
 
 # Execute entrypoint script
 ENTRYPOINT ["docker-entrypoint.sh"]
