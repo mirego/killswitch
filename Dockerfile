@@ -19,10 +19,8 @@ RUN apk --update --no-cache add --virtual build-dependencies build-base git node
   bundle install && \
   bundle binstubs --all && \
   npm set progress=false && \
-  npm install --silent --production
-
-# Pre-compile assets
-RUN SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
+  npm install --silent --production && \
+  SECRET_KEY_BASE=__UNUSED_BUT_REQUIRED__ RAILS_ENV=production bundle exec rake assets:precompile
 
 
 FROM base AS release
