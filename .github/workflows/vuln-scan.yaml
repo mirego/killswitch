@@ -1,0 +1,32 @@
+name: Vulnerability Scan
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: 
+      - '**'
+  schedule:
+    - cron: '30 13 * * 3'
+
+jobs:
+  vuln-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      
+      - run: make build
+
+      - uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'mirego/killswitch:${{ github.sha }}'
+          ignore-unfixed: true
+          format: sarif
+          output: 'vuln-scan-results.sarif'
+          vuln-type: 'os,library'
+
+      - uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'vuln-scan-results.sarif'
