@@ -1,0 +1,24 @@
+name: Syft SBOM Creation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-sbom:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: make build
+
+      - uses: anchore/sbom-action@latest
+        with:
+          image: 'mirego/killswitch:${{ github.sha }}'
+          dependency-snapshot: true
