@@ -15,10 +15,9 @@ jobs:
       docker-tag: ${{steps.tag.outputs.tag}}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: Set Docker tag
-        id: tag
+      - id: tag
         run: |
           TAG=$(echo "${{github.ref}}" | sed -e 's,.*/\(.*\),\1,')
           [[ "${{github.ref}}" == "refs/tags/"* ]] && TAG=$(echo $TAG | sed -e 's/^v//')
@@ -34,15 +33,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: make build
+      - run: make build
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
+      - uses: docker/login-action@v1
         with:
           registry: ghcr.io
           username: mirego-builds
           password: ${{secrets.MIREGO_GITHUB_PACKAGES_ACCESS_TOKEN}}
 
-      - name: Push Docker image
-        run: make push
+      - run: make push
