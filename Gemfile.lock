@@ -138,7 +138,7 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.2.0)
     faraday-patron (1.0.0)
-    ffaker (1.20.0)
+    ffaker (2.21.0)
     gaffe (1.2.0)
       rails (>= 4.0.0)
     globalid (1.0.0)
