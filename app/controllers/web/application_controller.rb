@@ -16,15 +16,10 @@ protected
 
     @current_organization ||= begin
       organization = Organization.friendly.find(params[:organization_id])
-
-      if can? :access, organization
-        organization
-      else
-        nil
-      end
-    rescue ActiveRecord::RecordNotFound
-      nil
+      organization if can?(:access, organization)
     end
+  rescue ActiveRecord::RecordNotFound
+    nil
   end
 
   def after_sign_in_path_for(resource)
