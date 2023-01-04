@@ -15,9 +15,15 @@ protected
     return nil if params[:organization_id].blank?
 
     @current_organization ||= begin
-      Organization.friendly.find(params[:organization_id]).tap do |organization|
-        authorize! :access, organization
+      organization = Organization.friendly.find(params[:organization_id])
+
+      if can? :access, organization
+        organization
+      else
+        nil
       end
+    rescue ActiveRecord::RecordNotFound
+      nil
     end
   end
 
