@@ -22,7 +22,7 @@ jobs:
           TAG=$(echo "${{github.ref}}" | sed -e 's,.*/\(.*\),\1,')
           [[ "${{github.ref}}" == "refs/tags/"* ]] && TAG=$(echo $TAG | sed -e 's/^v//')
           [ "$TAG" == "main" ] && TAG=latest
-          echo "::set-output name=tag::$TAG"
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
 
   build-and-push:
     needs: docker-tag
