@@ -15,10 +15,11 @@ protected
     return nil if params[:organization_id].blank?
 
     @current_organization ||= begin
-      Organization.friendly.find(params[:organization_id]).tap do |organization|
-        authorize! :access, organization
-      end
+      organization = Organization.friendly.find(params[:organization_id])
+      organization if can?(:access, organization)
     end
+  rescue ActiveRecord::RecordNotFound
+    nil
   end
 
   def after_sign_in_path_for(resource)
