@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :user do
     # Attributes
-    name { Faker::Name.name }
-    email { Faker::Internet.email }
-    password { Faker.bothify('?#?#?#?#?#?#?#?#?#}') }
+    name { FFaker::Name.name }
+    email { FFaker::Internet.email }
+    password { FFaker.bothify('?#?#?#?#?#?#?#?#?#}') }
   end
 end

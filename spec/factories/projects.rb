@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :project do
     # Attributes
-    name { Faker::Company.name }
+    name { FFaker::Company.name }
 
     # Associations
     association :application
