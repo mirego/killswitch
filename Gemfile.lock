@@ -95,7 +95,7 @@ GEM
     camaraderie (0.2)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-    cancancan (1.15.0)
+    cancancan (3.4.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     database_cleaner-active_record (2.0.1)
@@ -331,7 +331,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   camaraderie
-  cancancan (~> 1.15)
+  cancancan (~> 3.4)
   database_cleaner-active_record
   devise (~> 4.8)
   dotenv-rails
