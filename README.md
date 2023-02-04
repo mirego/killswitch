@@ -4,6 +4,15 @@
   <a href="https://github.com/mirego/killswitch/actions/workflows/ci.yaml"><img src="https://github.com/mirego/killswitch/actions/workflows/ci.yaml/badge.svg" /></a><br /><br />
 </div>
 
+<table>
+<tr>
+<td><img width="1244" alt="Screenshot of Killswitch showing the logged out homepage" src="https://user-images.githubusercontent.com/11348/216764468-e0ffc9d3-4b3a-4eea-8703-275357b21ac6.png">
+<td><img width="1233" alt="Screenshot of Killswitch showing the logged in homepage" src="https://user-images.githubusercontent.com/11348/216764471-f873faee-5d7d-4a2a-ae88-913f972765c9.png">
+<td><img width="1417" alt="Screenshot of Killswitch showing a project page" src="https://user-images.githubusercontent.com/11348/216764485-66682516-55ed-4696-92da-009817291b21.png">
+<tr>
+</table>
+<br>
+
 | Section                                 | Description                                            |
 | --------------------------------------- | ------------------------------------------------------ |
 | [🚧 Dependencies](#-dependencies)       | Technical dependencies and how to install them         |
