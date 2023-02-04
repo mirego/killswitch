@@ -1,6 +1,6 @@
 module HtmlHelper
   def logo(options = {})
-    render partial: 'shared/logo', locals: { options: options }
+    render partial: 'shared/logo', locals: { options: }
   end
 
   def icon(name, label = nil)

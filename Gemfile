@@ -35,9 +35,9 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'parser', '~> 2.7'
+  gem 'parser', '~> 3.2.0'
   gem 'rspec-rails', '~> 5.0'
-  gem 'rubocop', '~> 0.49'
+  gem 'rubocop', '~> 1.44'
   gem 'rubocop-rails', require: false
 end
 

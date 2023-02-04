@@ -63,16 +63,16 @@ describe BehaviorDispatcher do
         context 'defined by HTTP header' do
           context 'with a behavior matching language and version' do
             let(:language) { 'fr' }
-            let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
-            let(:behavior2) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'fr') }
+            let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
+            let(:behavior2) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'fr') }
 
             it { expect(dispatcher.matching_behavior).to eq behavior2 }
           end
 
           context 'with a behavior matching language but not version' do
             let(:language) { 'fr' }
-            let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
-            let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'eq', language: 'fr') }
+            let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
+            let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'eq', language: 'fr') }
 
             it { expect(dispatcher.matching_behavior).to eq Behavior::DefaultBehavior }
           end
@@ -84,16 +84,16 @@ describe BehaviorDispatcher do
 
           context 'with a behavior matching language and version' do
             let(:language) { 'fr' }
-            let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
-            let(:behavior2) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'fr') }
+            let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
+            let(:behavior2) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'fr') }
 
             it { expect(dispatcher.matching_behavior).to eq behavior2 }
           end
 
           context 'with a behavior matching language but not version' do
             let(:language) { 'fr' }
-            let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
-            let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'eq', language: 'fr') }
+            let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq', language: 'en') }
+            let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'eq', language: 'fr') }
 
             it { expect(dispatcher.matching_behavior).to eq Behavior::DefaultBehavior }
           end
@@ -102,43 +102,43 @@ describe BehaviorDispatcher do
 
       context 'with versions' do
         context 'with a behavior matching a < operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'lt') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lt') }
+          let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'lt') }
+          let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lt') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior2 }
         end
 
         context 'with a behavior matching a <= operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'lte') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lte') }
+          let(:behavior1) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'lte') }
+          let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lte') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior1 }
         end
 
         context 'with a behavior matching a == operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '4.0.0', version_operator: 'eq') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'eq') }
+          let(:behavior1) { create(:behavior, project:, version_number: '4.0.0', version_operator: 'eq') }
+          let(:behavior2) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'eq') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior2 }
         end
 
         context 'with a behavior matching a >= operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'gte') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'gte') }
+          let(:behavior1) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'gte') }
+          let(:behavior2) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'gte') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior2 }
         end
 
         context 'with a behavior matching a > operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '4.5.0', version_operator: 'gt') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '5.0.0', version_operator: 'gt') }
+          let(:behavior1) { create(:behavior, project:, version_number: '4.5.0', version_operator: 'gt') }
+          let(:behavior2) { create(:behavior, project:, version_number: '5.0.0', version_operator: 'gt') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior1 }
         end
 
         context 'with no behavior matching' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '1.0.0', version_operator: 'eq') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '2.0.0', version_operator: 'eq') }
+          let(:behavior1) { create(:behavior, project:, version_number: '1.0.0', version_operator: 'eq') }
+          let(:behavior2) { create(:behavior, project:, version_number: '2.0.0', version_operator: 'eq') }
 
           it { expect(dispatcher.matching_behavior).to eq Behavior::DefaultBehavior }
         end
@@ -146,15 +146,15 @@ describe BehaviorDispatcher do
 
       context 'with times' do
         context 'with a behavior matching a < operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 08:00:00', time_operator: 'lt') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 10:00:00', time_operator: 'lt') }
+          let(:behavior1) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 08:00:00', time_operator: 'lt') }
+          let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 10:00:00', time_operator: 'lt') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior2 }
         end
 
         context 'with a behavior matching a > operator' do
-          let(:behavior1) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 08:00:00', time_operator: 'gt') }
-          let(:behavior2) { create(:behavior, project: project, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 10:00:00', time_operator: 'gt') }
+          let(:behavior1) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 08:00:00', time_operator: 'gt') }
+          let(:behavior2) { create(:behavior, project:, version_number: '6.0.0', version_operator: 'lt', time: '2018-04-24 10:00:00', time_operator: 'gt') }
 
           it { expect(dispatcher.matching_behavior).to eq behavior1 }
         end
