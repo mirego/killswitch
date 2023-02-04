@@ -1,7 +1,8 @@
 <div align="center">
   <img src="https://user-images.githubusercontent.com/11348/151395659-3ebe29b6-b1d6-44fa-bb44-c42146c7e99a.png" width="563" />
   <p><strong>Killswitch</strong> is a clever control panel built by <a href="https://www.mirego.com">Mirego</a> that allows mobile developers to apply<br /> runtime version-specific behaviors to their iOS or Android application.</p>
-  <a href="https://github.com/mirego/killswitch/actions/workflows/ci.yaml"><img src="https://github.com/mirego/killswitch/actions/workflows/ci.yaml/badge.svg" /></a><br /><br />
+  <a href="https://github.com/mirego/killswitch/actions/workflows/ci.yaml"><img src="https://github.com/mirego/killswitch/actions/workflows/ci.yaml/badge.svg" /></a>
+  <a href="https://github.com/mirego/killswitch/tags"><img src="https://img.shields.io/github/v/tag/mirego/killswitch.svg"></a><br /><br />
 </div>
 
 <table>
