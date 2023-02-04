@@ -1,11 +1,11 @@
-FROM ruby:2.7.7-alpine3.16 AS base
+FROM ruby:3.2.0-alpine3.16 AS base
 
 # Create and define work directory
 WORKDIR /opt/killswitch
 
 # Install OS dependencies
 RUN apk --update --no-cache add nodejs tzdata libpq && \
-  gem update --system 3.0.8 && gem update --system
+  gem update --system 3.4.1 && gem update --system
 
 
 FROM base AS build

@@ -102,17 +102,14 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
-    dotenv (0.9.0)
-    dotenv-rails (0.9.0)
-      dotenv (= 0.9.0)
     ecma-re-validator (0.4.0)
       regexp_parser (~> 2.2)
     erubi (1.12.0)
     execjs (2.8.1)
-    factory_girl (4.2.0)
+    factory_girl (4.9.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.2.1)
-      factory_girl (~> 4.2.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
       railties (>= 3.0.0)
     faraday (1.5.1)
       faraday-em_http (~> 1.0)
@@ -188,7 +185,7 @@ GEM
     parallel (1.21.0)
     parser (2.7.2.0)
       ast (~> 2.4.1)
-    pg (1.2.3)
+    pg (1.4.5)
     public_suffix (4.0.6)
     puma (6.0.2)
       nio4r (~> 2.0)
@@ -342,7 +339,6 @@ DEPENDENCIES
   cancancan
   database_cleaner-active_record
   devise (~> 4.8)
-  dotenv-rails
   factory_girl_rails
   ffaker
   friendly_id
@@ -374,7 +370,7 @@ DEPENDENCIES
   versionomy
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.3.9
