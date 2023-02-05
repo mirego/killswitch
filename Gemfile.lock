@@ -66,8 +66,8 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
-    autoprefixer-rails (6.4.0.1)
-      execjs
+    autoprefixer-rails (10.4.7.0)
+      execjs (~> 2)
     babel-source (5.6.3)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
@@ -335,7 +335,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord_json_validator (~> 2.1.0)
-  autoprefixer-rails (= 6.4.0.1)
+  autoprefixer-rails (= 10.4.7.0)
   bootsnap
   bourgeois
   brakeman

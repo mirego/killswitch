@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '3.2.0'
 
 gem 'activerecord_json_validator', '~> 2.1.0'
-gem 'autoprefixer-rails', '6.4.0.1'
+gem 'autoprefixer-rails', '10.4.7.0'
 gem 'bootsnap'
 gem 'bourgeois'
 gem 'camaraderie'
