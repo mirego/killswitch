@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.7'
+ruby '3.2.0'
 
 gem 'activerecord_json_validator', '~> 2.1.0'
 gem 'autoprefixer-rails', '6.4.0.1'
@@ -8,7 +8,6 @@ gem 'bourgeois'
 gem 'camaraderie'
 gem 'cancancan'
 gem 'devise', '~> 4.8'
-gem 'dotenv-rails'
 gem 'friendly_id'
 gem 'gaffe', '1.2.0'
 gem 'jquery-turbolinks'
@@ -36,9 +35,9 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'parser', '~> 2.7'
+  gem 'parser', '~> 3.2.0'
   gem 'rspec-rails', '~> 5.0'
-  gem 'rubocop', '~> 0.49'
+  gem 'rubocop', '~> 1.44'
   gem 'rubocop-rails', require: false
 end
 

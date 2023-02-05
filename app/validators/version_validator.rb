@@ -19,6 +19,6 @@ class VersionValidator < ActiveModel::EachValidator
 protected
 
   def add_error(record, attribute, value)
-    record.errors.add(attribute, options.fetch(:message), value: value)
+    record.errors.add(attribute, options.fetch(:message), value:)
   end
 end
