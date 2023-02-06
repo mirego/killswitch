@@ -26,7 +26,7 @@ gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sprockets-es6'
 gem 'turbolinks', '~> 5.2'
-gem 'uglifier', '~> 2.7'
+gem 'uglifier', '~> 3.2'
 gem 'versionomy'
 
 group :development, :test do
