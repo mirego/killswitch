@@ -178,9 +178,9 @@ GEM
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    paper_trail (11.1.0)
-      activerecord (>= 5.2)
-      request_store (~> 1.1)
+    paper_trail (14.0.0)
+      activerecord (>= 6.0)
+      request_store (~> 1.4)
     parallel (1.22.1)
     parser (3.2.0.0)
       ast (~> 2.4.1)
@@ -237,7 +237,7 @@ GEM
     ranked-model (0.3)
       activerecord (>= 3.1.12)
     regexp_parser (2.6.2)
-    request_store (1.5.0)
+    request_store (1.5.1)
       rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -350,7 +350,7 @@ DEPENDENCIES
   gaffe (= 1.2.0)
   jquery-turbolinks
   mini_check
-  paper_trail (~> 11.1)
+  paper_trail (~> 14.0)
   parser (~> 3.2.0)
   pg
   puma
