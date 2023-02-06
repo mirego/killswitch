@@ -25,7 +25,7 @@ gem 'sass-rails', '~> 5.1'
 gem 'sentry-rails'
 gem 'sentry-ruby'
 gem 'sprockets-es6'
-gem 'turbolinks', '~> 5.0'
+gem 'turbolinks', '~> 5.2'
 gem 'uglifier', '~> 2.7'
 gem 'versionomy'
 
