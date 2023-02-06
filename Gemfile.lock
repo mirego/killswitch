@@ -311,8 +311,8 @@ GEM
     thor (1.2.1)
     tilt (2.0.10)
     timeout (0.3.1)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
+    turbolinks (5.2.1)
+      turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -370,7 +370,7 @@ DEPENDENCIES
   spring
   spring-commands-rspec
   sprockets-es6
-  turbolinks (~> 5.0)
+  turbolinks (~> 5.2)
   uglifier (~> 2.7)
   versionomy
 
