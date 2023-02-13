@@ -36,7 +36,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'ffaker'
   gem 'parser', '~> 3.2.0'
-  gem 'rspec-rails', '~> 5.0'
+  gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', '~> 1.44'
   gem 'rubocop-rails', require: false
 end
