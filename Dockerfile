@@ -1,7 +1,4 @@
-FROM ruby:2.7.5-alpine3.13
-
-# Install runtime dependencies
-RUN apk update && apk upgrade && apk add --no-cache bash build-base git nodejs npm tzdata postgresql-dev
+FROM ruby:3.2.1-alpine3.17 AS base
 
 # Copy all required files
 WORKDIR /opt/killswitch

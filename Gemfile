@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.5'
+ruby '3.2.1'
 
 gem 'activerecord_json_validator', '~> 2.1.0'
 gem 'autoprefixer-rails', '6.4.0.1'

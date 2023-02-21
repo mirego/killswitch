@@ -366,7 +366,7 @@ DEPENDENCIES
   versionomy
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 3.2.1p31
 
 BUNDLED WITH
    2.3.9
