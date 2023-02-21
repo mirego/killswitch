@@ -1,0 +1,25 @@
+name: SBOM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  upload-sbom:
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: make build
+        env:
+          DOCKER_TAG: sbom-snapshot
+
+      - uses: anchore/sbom-action@latest
+        with:
+          image: mirego/killswitch:sbom-snapshot
+          dependency-snapshot: true

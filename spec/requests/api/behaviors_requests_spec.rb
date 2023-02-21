@@ -3,7 +3,7 @@ require 'spec_helper'
 describe API::BehaviorsController, type: :request do
   describe 'GET /killswitch' do
     subject { response }
-    before { get '/killswitch', params: params }
+    before { get '/killswitch', params: }
 
     context 'with missing “version” parameter' do
       let(:params) { {} }

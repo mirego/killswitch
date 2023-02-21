@@ -2,7 +2,7 @@ module ErrorHelper
   def render_error_messages(record)
     return unless record.errors.any?
 
-    render partial: 'shared/error_messages', locals: { record: record }
+    render partial: 'shared/error_messages', locals: { record: }
   end
 
   # Return an exception's bracktrace formatted into a nice

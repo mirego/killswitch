@@ -2,8 +2,8 @@ tmp/
 log/
 .git/
 node_modules/
-spec/
+spec
 .*
+*.md
 Dockerfile
 Makefile
-README.md

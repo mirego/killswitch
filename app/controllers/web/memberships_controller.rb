@@ -49,6 +49,8 @@ protected
 
   def fetch_organization
     @organization = Organization.friendly.find(params[:organization_id])
+
+    authorize! :access, @organization
   end
 
   def fetch_membership

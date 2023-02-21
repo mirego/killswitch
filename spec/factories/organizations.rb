@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :organization do
     # Attributes
-    name { Faker::Company.name }
+    name { FFaker::Company.name }
   end
 end

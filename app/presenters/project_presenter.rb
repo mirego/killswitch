@@ -1,6 +1,6 @@
 class ProjectPresenter < Bourgeois::Presenter
   def curl_example(opts = {})
-    url_opts = opts.merge!(key: key, version: '_VERSION_')
+    url_opts = opts.merge!(key:, version: '_VERSION_')
     api_url = view.api_url(url_opts).gsub('_VERSION_', '$version')
 
     %(echo -n 'Enter a version number: '; read version; curl -H "Accept-Language: #{I18n.locale}" "#{api_url}")

@@ -15,7 +15,7 @@ preload_app!
 # Run code when a worker is spawned
 on_worker_boot do
   # Set a global logger
-  Rails.logger = ActiveSupport::Logger.new(STDOUT)
+  Rails.logger = ActiveSupport::Logger.new($stdout)
 
   # Set ActiveRecord config
   ActiveSupport.on_load(:active_record) do
