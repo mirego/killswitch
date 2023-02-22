@@ -1,4 +1,4 @@
-FROM ruby:3.2.0-alpine3.16 AS base
+FROM ruby:3.2.1-alpine3.17 AS base
 
 # Create and define work directory
 WORKDIR /opt/killswitch
