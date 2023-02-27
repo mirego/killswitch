@@ -28,5 +28,6 @@ jobs:
           vuln-type: os,library
 
       - uses: github/codeql-action/upload-sarif@v2
+        if: ${{ github.actor != 'dependabot' }}
         with:
           sarif_file: vuln-scan-results.sarif
