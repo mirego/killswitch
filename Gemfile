@@ -34,7 +34,7 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'database_cleaner-active_record'
-  gem 'factory_girl_rails'
+  gem "factory_bot_rails"
   gem 'ffaker'
   gem 'parser', '~> 3.2.0'
   gem 'rspec-rails', '~> 6.0'

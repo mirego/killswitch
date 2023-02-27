@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :project do
     # Attributes
     name { FFaker::Company.name }
