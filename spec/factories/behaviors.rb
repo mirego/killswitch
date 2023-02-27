@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :behavior do
     # Attributes
     version_number { "#{Random.rand(1..10)}.#{Random.rand(1..9)}.#{Random.rand(1..9)}" }

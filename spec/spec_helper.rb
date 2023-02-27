@@ -20,11 +20,11 @@ RSpec.configure do |config|
   config.order = 'random'
 
   # Inject Factory helper methods
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   # Reload all factories before running the tests (in case they
   # were preloaded with Spring)
-  config.before(:suite) { FactoryGirl.reload }
+  config.before(:suite) { FactoryBot.reload }
 
   config.before(:suite) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
