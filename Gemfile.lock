@@ -88,14 +88,14 @@ GEM
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
     cancancan (3.4.0)
-    concurrent-ruby (1.2.0)
+    concurrent-ruby (1.2.2)
     crass (1.0.6)
     database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
-    devise (4.8.1)
+    devise (4.9.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
@@ -239,9 +239,9 @@ GEM
     regexp_parser (2.6.2)
     request_store (1.5.0)
       rack (>= 1.4)
-    responders (3.0.1)
-      actionpack (>= 5.0)
-      railties (>= 5.0)
+    responders (3.1.0)
+      actionpack (>= 5.2)
+      railties (>= 5.2)
     rexml (3.2.5)
     rspec-core (3.12.1)
       rspec-support (~> 3.12.0)
@@ -343,7 +343,7 @@ DEPENDENCIES
   camaraderie
   cancancan
   database_cleaner-active_record
-  devise (~> 4.8)
+  devise (~> 4.9)
   factory_girl_rails
   ffaker
   friendly_id
