@@ -87,7 +87,7 @@ GEM
     camaraderie (0.2.1)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-    cancancan (3.4.0)
+    cancancan (3.5.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     database_cleaner-active_record (2.0.1)
