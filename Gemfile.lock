@@ -148,7 +148,7 @@ GEM
       json
     mini_mime (1.1.2)
     mini_portile2 (2.8.1)
-    minitest (5.17.0)
+    minitest (5.18.0)
     msgpack (1.6.0)
     net-imap (0.3.4)
       date
@@ -220,8 +220,8 @@ GEM
       thor (~> 1.0)
     rainbow (3.1.1)
     rake (13.0.6)
-    ranked-model (0.3)
-      activerecord (>= 3.1.12)
+    ranked-model (0.4.8)
+      activerecord (>= 4.2)
     regexp_parser (2.7.0)
     request_store (1.5.0)
       rack (>= 1.4)
