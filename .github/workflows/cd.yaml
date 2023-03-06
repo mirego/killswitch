@@ -29,6 +29,7 @@ jobs:
           echo "tag=$TAG" >> $GITHUB_OUTPUT
 
   build-and-push:
+    if: ${{ github.actor != 'dependabot[bot]' }}
     needs: docker-tag
     runs-on: ubuntu-latest
     env:
