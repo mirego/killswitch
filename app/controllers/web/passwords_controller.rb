@@ -1,4 +1,4 @@
-class Web::PasswordsController < ::Devise::PasswordsController
+class Web::PasswordsController < Devise::PasswordsController
 protected
 
   # Where to redirect after users reset their password

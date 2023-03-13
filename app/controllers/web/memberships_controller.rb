@@ -7,23 +7,13 @@ class Web::MembershipsController < Web::ApplicationController
     @memberships = @organization.memberships.oldest
   end
 
-  # GET /memberships/:id/edit
-  def edit; end
-
-  # PUT /memberships/:id
-  # PATCH /memberships/:id
-  def update
-    if @membership.update(membership_params(context: :update))
-      redirect_to web_organization_memberships_path, notice: t('.notice')
-    else
-      render :edit
-    end
-  end
-
   # GET /memberships/new
   def new
     @membership = @organization.admins.new(user: User.new)
   end
+
+  # GET /memberships/:id/edit
+  def edit; end
 
   # POST /memberships
   def create
@@ -33,6 +23,16 @@ class Web::MembershipsController < Web::ApplicationController
       redirect_to web_organization_memberships_path, notice: t('.notice')
     else
       render :new
+    end
+  end
+
+  # PUT /memberships/:id
+  # PATCH /memberships/:id
+  def update
+    if @membership.update(membership_params(context: :update))
+      redirect_to web_organization_memberships_path, notice: t('.notice')
+    else
+      render :edit
     end
   end
 

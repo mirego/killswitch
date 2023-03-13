@@ -1,7 +1,10 @@
 class MembershipPresenter < Bourgeois::Presenter
+  # Structs
+  Dropdown = Struct.new(:id, :label)
+
   def self.membership_types
     @_service_types ||= Camaraderie.membership_types.map do |type|
-      OpenStruct.new(id: type, label: membership_type_label(type))
+      Dropdown.new(id: type, label: membership_type_label(type))
     end
   end
 

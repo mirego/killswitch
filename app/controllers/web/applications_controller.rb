@@ -8,10 +8,16 @@ class Web::ApplicationsController < Web::ApplicationController
     @applications = @organization.applications.includes(:projects)
   end
 
+  # GET /applications/:id
+  def show; end
+
   # GET /applications/new
   def new
     @application = @organization.applications.build
   end
+
+  # GET /applications/:id/edit
+  def edit; end
 
   # POST /applications
   def create
@@ -42,12 +48,6 @@ class Web::ApplicationsController < Web::ApplicationController
       redirect_to web_organization_applications_path, alert: t('.alert')
     end
   end
-
-  # GET /applications/:id/edit
-  def edit; end
-
-  # GET /applications/:id
-  def show; end
 
 protected
 

@@ -17,7 +17,7 @@ protected
 
   # Convert the array to a { id1 => 0, id2 => 1 } hash
   def sanitize_behaviors
-    @behaviors_map = Hash[@behavior_ids.each_with_index.to_a]
+    @behaviors_map = @behavior_ids.each_with_index.to_a.to_h
   end
 
   # Apply new order to each behavior
