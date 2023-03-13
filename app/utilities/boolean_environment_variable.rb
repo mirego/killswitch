@@ -4,6 +4,6 @@ class BooleanEnvironmentVariable
   end
 
   def as_bool
-    ![nil, '', '0', 'false'].include?(@value.try(:downcase))
+    [nil, '', '0', 'false'].exclude?(@value.try(:downcase))
   end
 end

@@ -55,7 +55,7 @@ protected
       time_matches?(behavior)
     ]
 
-    !conditions.include?(false)
+    conditions.exclude?(false)
   end
 
   # Return true if our version matches
