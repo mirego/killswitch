@@ -6,7 +6,6 @@ class Behavior < ApplicationRecord
   DATA_JSON_SCHEMA = Rails.root.join('config/schemas/behavior_data.jsonschema')
 
   # Validations
-  validates :project, presence: true
   validates :version_number, presence: true, version: true
   validates :version_operator, presence: true, inclusion: { in: VERSION_OPERATORS.keys }
   validates :time, presence: true, if: :time_operator?

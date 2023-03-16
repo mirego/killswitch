@@ -21,7 +21,7 @@ class User < ApplicationRecord
   include Welcomeable
 
   def super_powers?
-    organizations.where(super_admin: true).exists?
+    organizations.exists?(super_admin: true)
   end
 
   def allowed_in?(organization)

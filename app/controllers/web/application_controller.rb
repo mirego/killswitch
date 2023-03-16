@@ -1,4 +1,4 @@
-class Web::ApplicationController < ::ApplicationController
+class Web::ApplicationController < ApplicationController
   # CSRF Protection
   protect_from_forgery with: :exception
 

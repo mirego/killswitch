@@ -3,10 +3,16 @@ class Web::ProjectsController < Web::ApplicationController
   before_action :fetch_application
   before_action :fetch_project, only: [:show, :update, :edit, :destroy]
 
+  # GET /applications/:application_id/projects/:id
+  def show; end
+
   # GET /applications/:application_id/projects/new
   def new
     @project = @application.projects.build
   end
+
+  # GET /applications/:application_id/projects/:id/edit
+  def edit; end
 
   # POST /applications/:application_id/projects
   def create
@@ -28,12 +34,6 @@ class Web::ProjectsController < Web::ApplicationController
       render :edit
     end
   end
-
-  # GET /applications/:application_id/projects/:id/edit
-  def edit; end
-
-  # GET /applications/:application_id/projects/:id
-  def show; end
 
   # GET /applications/:application_id/projects/:id
   def destroy

@@ -1,19 +1,22 @@
 class BehaviorPresenter < Bourgeois::Presenter
+  # Structs
+  Dropdown = Struct.new(:id, :label)
+
   def self.version_operators
     @_version_operators ||= Behavior::VERSION_OPERATORS.keys.map do |operator|
-      OpenStruct.new(id: operator, label: version_operator_label(operator))
+      Dropdown.new(id: operator, label: version_operator_label(operator))
     end
   end
 
   def self.time_operators
     @_time_operators ||= Behavior::TIME_OPERATORS.keys.map do |operator|
-      OpenStruct.new(id: operator, label: time_operator_label(operator))
+      Dropdown.new(id: operator, label: time_operator_label(operator))
     end
   end
 
   def self.languages
     @_languages ||= Behavior::LANGUAGES.map do |language|
-      OpenStruct.new(id: language, label: language_label(language))
+      Dropdown.new(id: language, label: language_label(language))
     end
   end
 

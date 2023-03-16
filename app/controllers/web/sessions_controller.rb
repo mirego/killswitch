@@ -1,4 +1,4 @@
-class Web::SessionsController < ::Devise::SessionsController
+class Web::SessionsController < Devise::SessionsController
   before_action :configure_permitted_parameters
 
 protected

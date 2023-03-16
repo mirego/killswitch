@@ -1,12 +1,12 @@
 # Environment
-environment ENV['RACK_ENV']
+environment ENV.fetch('RACK_ENV')
 
 # Workers count
-workers ENV['PUMA_WORKERS'] || 1
+workers ENV.fetch('PUMA_WORKERS', 1)
 
 # Threads count per worker
-min_threads = ENV['PUMA_MIN_THREADS'] || 0
-max_threads = ENV['PUMA_MAX_THREADS'] || 5
+min_threads = ENV.fetch('PUMA_MIN_THREADS', 0)
+max_threads = ENV.fetch('PUMA_MAX_THREADS', 5)
 threads min_threads, max_threads
 
 # Preload the app
