@@ -218,7 +218,7 @@ GEM
     rake (13.0.6)
     ranked-model (0.4.8)
       activerecord (>= 4.2)
-    regexp_parser (2.7.0)
+    regexp_parser (2.8.0)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.1.0)
@@ -242,7 +242,7 @@ GEM
       rspec-mocks (~> 3.11)
       rspec-support (~> 3.11)
     rspec-support (3.12.0)
-    rubocop (1.49.0)
+    rubocop (1.50.2)
       json (~> 2.3)
       parallel (~> 1.10)
       parser (>= 3.2.0.0)
@@ -338,7 +338,7 @@ DEPENDENCIES
   rails_12factor
   ranked-model
   rspec-rails (~> 6.0)
-  rubocop (~> 1.49)
+  rubocop (~> 1.50)
   rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
