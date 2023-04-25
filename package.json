@@ -20,7 +20,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "postcss": ">=8.2.13",
     "prettier": "2.5.1",
-    "stylelint": "13.13.1",
+    "stylelint": "15.6.0",
     "stylelint-config-mirego": "2.0.0",
     "stylelint-order": "4.1.0"
   }
