@@ -38,7 +38,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'parser', '~> 3.2.2'
   gem 'rspec-rails', '~> 6.0'
-  gem 'rubocop', '~> 1.50'
+  gem 'rubocop', '~> 1.51'
   gem 'rubocop-rails', require: false
 end
 
