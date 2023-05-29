@@ -79,7 +79,7 @@ GEM
     bourgeois (1.0.5)
       actionpack (>= 3.0.0)
       activemodel (>= 3.0.0)
-    brakeman (5.4.1)
+    brakeman (6.0.0)
     builder (3.2.4)
     bundler-audit (0.9.1)
       bundler (>= 1.2.0, < 3)
