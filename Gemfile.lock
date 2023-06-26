@@ -131,6 +131,7 @@ GEM
       regexp_parser (~> 2.0)
       simpleidn (~> 0.2)
       uri_template (~> 0.7)
+    language_server-protocol (3.17.0.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -245,10 +246,11 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.0)
-    rubocop (1.52.0)
+    rubocop (1.53.1)
       json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.2.0.0)
+      parser (>= 3.2.2.3)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
@@ -346,7 +348,7 @@ DEPENDENCIES
   rails_12factor
   ranked-model
   rspec-rails (~> 6.0)
-  rubocop (~> 1.52)
+  rubocop (~> 1.53)
   rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
