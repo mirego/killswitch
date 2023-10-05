@@ -18,7 +18,7 @@
     "eslint-plugin-mirego": "0.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
-    "postcss": ">=8.2.13",
+    "postcss": ">=8.4.31",
     "prettier": "2.5.1",
     "stylelint": "13.13.1",
     "stylelint-config-mirego": "2.0.0",
