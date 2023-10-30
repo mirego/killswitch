@@ -224,7 +224,7 @@ GEM
     rake (13.0.6)
     ranked-model (0.4.9)
       activerecord (>= 5.2)
-    regexp_parser (2.8.1)
+    regexp_parser (2.8.2)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.1.0)
@@ -260,9 +260,9 @@ GEM
       rubocop-ast (>= 1.28.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 3.0)
-    rubocop-ast (1.29.0)
+    rubocop-ast (1.30.0)
       parser (>= 3.2.1.0)
-    rubocop-rails (2.21.0)
+    rubocop-rails (2.22.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
@@ -308,7 +308,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
-    unicode-display_width (2.4.2)
+    unicode-display_width (2.5.0)
     uri_template (0.7.0)
     versionomy (0.5.0)
       blockenspiel (~> 0.5)
@@ -317,7 +317,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.11)
+    zeitwerk (2.6.12)
 
 PLATFORMS
   ruby
