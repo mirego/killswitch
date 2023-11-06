@@ -72,7 +72,6 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    base64 (0.1.1)
     bcrypt (3.1.18)
     blockenspiel (0.5.0)
     bootsnap (1.16.0)
@@ -248,12 +247,11 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.0)
-    rubocop (1.56.3)
-      base64 (~> 0.1.1)
+    rubocop (1.57.2)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
-      parser (>= 3.2.2.3)
+      parser (>= 3.2.2.4)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml (>= 3.2.5, < 4.0)
@@ -351,7 +349,7 @@ DEPENDENCIES
   rails_12factor
   ranked-model
   rspec-rails (~> 6.0)
-  rubocop (~> 1.56)
+  rubocop (~> 1.57)
   rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
