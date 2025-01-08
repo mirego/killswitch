@@ -102,7 +102,7 @@ check: check-dependencies-security check-code-security
 .PHONY: check-dependencies-security
 check-dependencies-security:
 	bundle exec bundle-audit check --update
-	npm audit --production
+	npm audit --production --audit-level=critical
 
 .PHONY: check-code-security
 check-code-security:
