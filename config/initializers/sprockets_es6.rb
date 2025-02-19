@@ -1,19 +1,6 @@
-module Sprockets
-  class ES6
-    DEFAULT_OPTIONS = {
-      'moduleIds' => true,
-      'modules' => 'amd',
-      'keepModuleIdExtensions' => false,
-      'loose' => %w(es6.classes)
-    }.freeze
-
-    def self.instance
-      @instance ||= new(DEFAULT_OPTIONS)
-    end
-  end
+Sprockets::ES6.configure do |config|
+  config.moduleIds = true
+  config.modules = 'amd'
+  config.keepModuleIdExtensions = false
+  config.loose = %w(es6.classes)
 end
-
-# NOTE: We shouldn’t have to override `Sprockets::ES6.instance` to pass
-#       custom options to the processor. We should simply be able to do this:
-#
-#       Sprockets.register_transformer 'text/ecmascript-6', 'application/javascript', Sprockets::ES6.new(options)
