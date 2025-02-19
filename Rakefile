@@ -8,4 +8,4 @@ require File.expand_path('../config/application', __FILE__)
 Killswitch::Application.load_tasks
 
 # Load tasks in app/tasks
-Dir[Rails.root.join('app/tasks/**/*.rake')].each { |f| load f }
+Rails.root.glob('app/tasks/**/*.rake').each { |f| load f }

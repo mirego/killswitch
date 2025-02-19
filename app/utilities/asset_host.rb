@@ -10,7 +10,5 @@ class AssetHost
     @uri = URI::Generic.build(options)
   end
 
-  def to_s
-    @uri.to_s
-  end
+  delegate :to_s, to: :@uri
 end
