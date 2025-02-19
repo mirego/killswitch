@@ -2,8 +2,3 @@
 ignore:
   - CVE-2024-27456 # https://github.com/advisories/GHSA-785g-282q-pwvx (packaging issue with rack-cors)
   - CVE-2024-54133 # https://github.com/rails/rails/security/advisories/GHSA-vfm5-rmrh-j26v (We don’t generate CSP from user input)
-  - CVE-2024-47889 # https://github.com/rails/rails/security/advisories/GHSA-h47h-mwp9-c6q6 (We don’t use block_format)
-  - CVE-2024-28103
-  - CVE-2024-41128
-  - CVE-2024-47887 # https://github.com/rails/rails/security/advisories/GHSA-vfg9-r3fq-jvx4 (We don’t use HTTP Token authentication)
-  - CVE-2024-47888 # https://github.com/rails/rails/security/advisories/GHSA-wwhv-wxv9-rpgw (We don’t use plain_text_for_blockquote_node)
