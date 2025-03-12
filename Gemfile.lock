@@ -112,7 +112,7 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
-    ffaker (2.23.0)
+    ffaker (2.24.0)
     friendly_id (5.5.1)
       activerecord (>= 4.0.0)
     gaffe (1.2.0)
