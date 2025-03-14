@@ -5,6 +5,8 @@
 
   <div class="homepage">
     <div class="homepage-content">
+      <%= render partial: 'shared/flashes' %>
+
       <%= link_to root_path, class: 'homepage-logo' do %>
         <%= logo(class: 'homepage-logo-image') %>
       <% end %>
