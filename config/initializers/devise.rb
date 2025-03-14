@@ -140,6 +140,9 @@ Devise.setup do |config|
   # :secure => true in order to force SSL only cookies.
   # config.rememberable_options = {}
 
+  # Invalidates all the remember me tokens when the user signs out.
+  config.expire_all_remember_me_on_sign_out = true
+
   # ==> Configuration for :validatable
   # Range for password length. Default is 8..128.
   # config.password_length = 8..128
