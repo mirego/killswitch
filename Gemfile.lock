@@ -104,6 +104,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-security (0.18.0)
+      devise (>= 4.3.0)
     diff-lcs (1.6.0)
     erubi (1.13.1)
     execjs (2.8.1)
@@ -333,6 +335,7 @@ DEPENDENCIES
   cancancan
   database_cleaner-active_record
   devise (~> 4.9)
+  devise-security
   factory_bot_rails
   ffaker
   friendly_id
@@ -368,7 +371,7 @@ DEPENDENCIES
   versionomy
 
 RUBY VERSION
-   ruby 3.2.1p31
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.3.9

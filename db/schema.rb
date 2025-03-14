@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_20_163300) do
+ActiveRecord::Schema.define(version: 2025_03_14_190743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_04_20_163300) do
     t.string "version_number"
     t.string "version_operator"
     t.string "language"
-    t.json "data", default: "{}"
+    t.json "data", default: {}
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer "behavior_order"
@@ -61,6 +61,14 @@ ActiveRecord::Schema.define(version: 2018_04_20_163300) do
     t.index ["organization_id", "user_id"], name: "index_memberships_on_organization_id_and_user_id"
     t.index ["organization_id"], name: "index_memberships_on_organization_id"
     t.index ["user_id"], name: "index_memberships_on_user_id"
+  end
+
+  create_table "old_passwords", force: :cascade do |t|
+    t.string "encrypted_password", null: false
+    t.string "password_archivable_type", null: false
+    t.integer "password_archivable_id", null: false
+    t.datetime "created_at"
+    t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
   create_table "organizations", id: :serial, force: :cascade do |t|
