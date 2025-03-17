@@ -232,7 +232,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.4.0)
+    rexml (3.4.1)
     rspec-core (3.13.3)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -354,7 +354,7 @@ DEPENDENCIES
   rails-html-sanitizer (~> 1.6)
   rails_12factor
   ranked-model
-  rexml (~> 3.3)
+  rexml (~> 3.4)
   rspec-rails (~> 6.1)
   rubocop (~> 1.73)
   rubocop-rails
