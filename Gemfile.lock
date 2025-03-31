@@ -173,6 +173,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.9)
+    prism (1.4.0)
     public_suffix (5.0.4)
     puma (6.6.0)
       nio4r (~> 2.0)
@@ -250,7 +251,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.2)
-    rubocop (1.74.0)
+    rubocop (1.75.1)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -258,11 +259,12 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.38.0, < 2.0)
+      rubocop-ast (>= 1.43.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
-    rubocop-ast (1.40.0)
-      parser (>= 3.3.1.0)
+    rubocop-ast (1.43.0)
+      parser (>= 3.3.7.2)
+      prism (~> 1.4)
     rubocop-rails (2.30.3)
       activesupport (>= 4.2.0)
       lint_roller (~> 1.1)
@@ -356,7 +358,7 @@ DEPENDENCIES
   ranked-model
   rexml (~> 3.4)
   rspec-rails (~> 6.1)
-  rubocop (~> 1.74)
+  rubocop (~> 1.75)
   rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
