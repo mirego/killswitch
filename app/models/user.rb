@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :password, length: { within: 8..128, allow_blank: true }, presence: { if: :password_required? }
 
   # Devise
-  devise :database_authenticatable, :rememberable, :trackable, :recoverable, :password_archivable
+  devise :database_authenticatable, :rememberable, :trackable, :recoverable, :password_archivable, :session_limitable
 
   # FriendlyId
   extend FriendlyId
