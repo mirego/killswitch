@@ -21,7 +21,7 @@ gem 'rack-accept', require: 'rack/accept'
 gem 'rack-canonical-host', '1.3.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rack-ssl', require: 'rack/ssl'
-gem 'rails', '6.1.7.10'
+gem 'rails', '8.0.2'
 gem 'rails-html-sanitizer', '~> 1.6'
 gem 'ranked-model'
 gem 'rexml', '~> 3.4'
@@ -42,7 +42,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'parser', '~> 3.3.7'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 7.1'
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-rails', require: false
 end
