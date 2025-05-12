@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   docker-tag:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     outputs:
       docker-tag: ${{steps.tag.outputs.tag}}
@@ -31,7 +31,7 @@ jobs:
   build-and-push:
     if: ${{ github.actor != 'dependabot[bot]' }}
     needs: docker-tag
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       DOCKER_TAG: ${{needs.docker-tag.outputs.docker-tag}}
 
