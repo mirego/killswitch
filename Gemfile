@@ -41,7 +41,7 @@ group :development, :test do
   gem 'database_cleaner-active_record'
   gem 'factory_bot_rails'
   gem 'ffaker'
-  gem 'parser', '~> 3.3.7'
+  gem 'parser', '~> 3.3.8'
   gem 'rspec-rails', '~> 6.1'
   gem 'rubocop', '~> 1.75'
   gem 'rubocop-rails', require: false
