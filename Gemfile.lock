@@ -256,7 +256,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.2)
-    rubocop (1.76.1)
+    rubocop (1.77.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -264,7 +264,7 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.45.0, < 2.0)
+      rubocop-ast (>= 1.45.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.45.1)
@@ -363,7 +363,7 @@ DEPENDENCIES
   ranked-model
   rexml (~> 3.4)
   rspec-rails (~> 6.1)
-  rubocop (~> 1.76)
+  rubocop (~> 1.77)
   rubocop-rails
   sass-rails (~> 5.1)
   sentry-rails
