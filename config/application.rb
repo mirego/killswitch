@@ -14,7 +14,7 @@ module Killswitch
     # Version
     VERSION = '2.0.0-pre01'.freeze
 
-    config.load_defaults 7.1
+    config.load_defaults 7.2
 
     # English!
     config.i18n.default_locale = :en
