@@ -42,7 +42,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'ffaker'
   gem 'parser', '~> 3.3.8'
-  gem 'rspec-rails', '~> 6.1'
+  gem 'rspec-rails', '~> 8.0'
   gem 'rubocop', '~> 1.79'
   gem 'rubocop-rails'
 end
