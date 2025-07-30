@@ -338,7 +338,7 @@ GEM
       bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
     simpleidn (0.2.3)
-    spring (4.2.1)
+    spring (4.3.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
     sprockets (3.7.2)
