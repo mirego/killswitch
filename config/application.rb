@@ -12,7 +12,7 @@ Bundler.require(:default, Rails.env)
 module Killswitch
   class Application < Rails::Application
     # Version
-    VERSION = '2.0.0-pre01'.freeze
+    VERSION = '2.0.0'.freeze
 
     config.load_defaults 7.2
 

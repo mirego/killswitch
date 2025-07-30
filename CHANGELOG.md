@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.0.0] - 2025-07-30
+
+- Upgrade to Rails 7.2.x (from 6.1.x)
+
 ## [1.2.2] - 2024-01-15
 
 - Upgrade several Ruby gems ([references](https://github.com/mirego/killswitch/pulls?q=is%3Apr+is%3Amerged+user%3Adependabot+created%3A2023-02-05..2024-01-15))
