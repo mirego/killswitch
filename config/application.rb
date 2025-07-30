@@ -14,7 +14,7 @@ module Killswitch
     # Version
     VERSION = '1.3.1'.freeze
 
-    config.load_defaults 6.0
+    config.load_defaults 7.1
 
     # English!
     config.i18n.default_locale = :en
@@ -29,7 +29,7 @@ module Killswitch
     config.action_dispatch.rescue_responses['CanCan::AccessDenied'] = :forbidden
 
     # Force SSL on everything except '/killswitch' endpoint
-    if Rails.application.secrets.force_ssl
+    if Rails.application.config_for(:settings)[:force_ssl]
       config.middleware.use Rack::SSL, exclude: lambda { |env| Rack::Request.new(env).path == '/killswitch' }
     end
 
@@ -45,28 +45,28 @@ module Killswitch
     config.middleware.use Rack::Accept
 
     # Canonical host
-    if Rails.application.secrets.domain
-      config.middleware.use Rack::CanonicalHost, Rails.application.secrets.domain
+    if Rails.application.config_for(:settings)[:domain]
+      config.middleware.use Rack::CanonicalHost, Rails.application.config_for(:settings)[:domain]
     end
 
     # Basic Auth
-    if Rails.application.secrets.auth_username && Rails.application.secrets.auth_password
+    if Rails.application.config_for(:settings)[:auth_username] && Rails.application.config_for(:settings)[:auth_password]
       config.middleware.use Rack::Auth::Basic, 'Protected Area' do |username, password|
-        username == Rails.application.secrets.auth_username && password == Rails.application.secrets.auth_password
+        username == Rails.application.config_for(:settings)[:auth_username] && password == Rails.application.config_for(:settings)[:auth_password]
       end
     end
 
     # Mailers
-    config.action_mailer.default_url_options = { host: Rails.application.secrets.domain, port: Rails.application.secrets.port }
-    config.action_mailer.asset_host = AssetHost.new(Rails.application.secrets).to_s
+    config.action_mailer.default_url_options = { host: Rails.application.config_for(:settings)[:domain], port: Rails.application.config_for(:settings)[:port] }
+    config.action_mailer.asset_host = AssetHost.new(Rails.application.config_for(:settings)).to_s
 
     # SMTP server
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      address: Rails.application.secrets.smtp_address,
-      port: Rails.application.secrets.smtp_port,
-      user_name: Rails.application.secrets.smtp_username,
-      password: Rails.application.secrets.smtp_password
+      address: Rails.application.config_for(:settings)[:smtp_address],
+      port: Rails.application.config_for(:settings)[:smtp_port],
+      user_name: Rails.application.config_for(:settings)[:smtp_username],
+      password: Rails.application.config_for(:settings)[:smtp_password]
     }
   end
 end

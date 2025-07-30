@@ -1,6 +1,6 @@
 <h1><%= t('.title') %></h1>
 <p><%= t('.content') %></p>
 
-<% if Rails.application.secrets.show_backtrace %>
+<% if Rails.application.config_for(:settings)[:show_backtrace] %>
   <%= render partial: 'shared/exception_backtrace' %>
 <% end %>
