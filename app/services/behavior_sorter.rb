@@ -3,6 +3,7 @@ class BehaviorSorter
     @project = project
   end
 
+  # rubocop:disable Naming/PredicateMethod
   def reorder!(behavior_ids)
     @behavior_ids = behavior_ids
 
@@ -12,6 +13,7 @@ class BehaviorSorter
 
     true
   end
+  # rubocop:enable Naming/PredicateMethod
 
 protected
 

@@ -14,14 +14,14 @@ gem 'friendly_id'
 gem 'gaffe', '1.2.0'
 gem 'jquery-turbolinks'
 gem 'mini_check'
-gem 'paper_trail', '~> 11.1'
+gem 'paper_trail', '~> 15.0'
 gem 'pg'
 gem 'puma'
 gem 'rack-accept', require: 'rack/accept'
 gem 'rack-canonical-host', '1.3.0'
 gem 'rack-cors', require: 'rack/cors'
 gem 'rack-ssl', require: 'rack/ssl'
-gem 'rails', '6.1.7.10'
+gem 'rails', '~> 7.1.0'
 gem 'rails-html-sanitizer', '~> 1.6'
 gem 'ranked-model'
 gem 'rexml', '~> 3.4'
@@ -44,7 +44,7 @@ group :development, :test do
   gem 'parser', '~> 3.3.8'
   gem 'rspec-rails', '~> 6.1'
   gem 'rubocop', '~> 1.79'
-  gem 'rubocop-rails', require: false
+  gem 'rubocop-rails'
 end
 
 group :development do

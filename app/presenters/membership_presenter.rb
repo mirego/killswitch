@@ -2,6 +2,10 @@ class MembershipPresenter < Bourgeois::Presenter
   # Structs
   Dropdown = Struct.new(:id, :label)
 
+  def to_model
+    self
+  end
+
   def self.membership_types
     @_service_types ||= Camaraderie.membership_types.map do |type|
       Dropdown.new(id: type, label: membership_type_label(type))

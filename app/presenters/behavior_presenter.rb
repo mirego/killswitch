@@ -2,6 +2,10 @@ class BehaviorPresenter < Bourgeois::Presenter
   # Structs
   Dropdown = Struct.new(:id, :label)
 
+  def to_model
+    self
+  end
+
   def self.version_operators
     @_version_operators ||= Behavior::VERSION_OPERATORS.keys.map do |operator|
       Dropdown.new(id: operator, label: version_operator_label(operator))
