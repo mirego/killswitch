@@ -1,6 +1,6 @@
-if Rails.application.secrets.sentry_dsn.present?
+if Rails.application.config_for(:settings)[:sentry_dsn].present?
   Sentry.init do |config|
-    config.dsn = Rails.application.secrets.sentry_dsn
+    config.dsn = Rails.application.config_for(:settings)[:sentry_dsn]
     config.breadcrumbs_logger = [:active_support_logger, :http_logger]
 
     config.excluded_exceptions += %w(
