@@ -4,9 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [2.0.0] - 2025-07-30
+## [2.0.0] - 2025-07-31
 
-- Upgrade to Rails 7.2.x (from 6.1.x)
+- Upgrade to Rails 8.0.x (from 6.1.x)
 
 ## [1.2.2] - 2024-01-15
 
