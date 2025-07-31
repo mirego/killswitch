@@ -69,6 +69,6 @@ private
 
   def membership_params(context: :create)
     permitted_parameters = send(:"#{context}_membership_params")
-    params.require(:membership).permit(*permitted_parameters).delete_if { |_, value| value.empty? }
+    params.expect(membership: [*permitted_parameters]).delete_if { |_, value| value.empty? }
   end
 end

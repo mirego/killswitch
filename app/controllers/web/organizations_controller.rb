@@ -57,6 +57,6 @@ protected
 
   def organization_params
     permitted_parameters = [:name]
-    params.require(:organization).permit(*permitted_parameters)
+    params.expect(organization: [*permitted_parameters])
   end
 end
