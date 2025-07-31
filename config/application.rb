@@ -8,13 +8,17 @@ require File.expand_path('../../app/utilities/boolean_environment_variable', __F
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-# rubocop:disable Style/IfUnlessModifier
 module Killswitch
   class Application < Rails::Application
     # Version
     VERSION = '2.0.0'.freeze
 
-    config.load_defaults 7.2
+    config.load_defaults 8.0
+
+    # Please, add to the `ignore` list any other `lib` subdirectories that do
+    # not contain `.rb` files, or that should not be reloaded or eager loaded.
+    # Common ones are `templates`, `generators`, or `middleware`, for example.
+    config.autoload_lib(ignore: %w(assets tasks))
 
     # English!
     config.i18n.default_locale = :en
@@ -29,9 +33,7 @@ module Killswitch
     config.action_dispatch.rescue_responses['CanCan::AccessDenied'] = :forbidden
 
     # Force SSL on everything except '/killswitch' endpoint
-    if Rails.application.config_for(:settings)[:force_ssl]
-      config.middleware.use Rack::SSL, exclude: lambda { |env| Rack::Request.new(env).path == '/killswitch' }
-    end
+    config.middleware.use Rack::SSL, exclude: lambda { |env| Rack::Request.new(env).path == '/killswitch' } if Rails.application.config_for(:settings)[:force_ssl]
 
     # Rack::Cors
     config.middleware.insert_before 0, Rack::Cors do
@@ -45,9 +47,7 @@ module Killswitch
     config.middleware.use Rack::Accept
 
     # Canonical host
-    if Rails.application.config_for(:settings)[:domain]
-      config.middleware.use Rack::CanonicalHost, Rails.application.config_for(:settings)[:domain]
-    end
+    config.middleware.use Rack::CanonicalHost, Rails.application.config_for(:settings)[:domain] if Rails.application.config_for(:settings)[:domain]
 
     # Basic Auth
     if Rails.application.config_for(:settings)[:auth_username] && Rails.application.config_for(:settings)[:auth_password]
@@ -70,4 +70,3 @@ module Killswitch
     }
   end
 end
-# rubocop:enable Style/IfUnlessModifier

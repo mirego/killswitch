@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2025_04_03_130915) do
-
+ActiveRecord::Schema[8.0].define(version: 2025_07_31_014203) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "applications", id: :serial, force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "slug"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: nil
     t.integer "organization_id"
   end
 
@@ -30,12 +29,12 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
     t.string "version_operator"
     t.string "language"
     t.json "data", default: {}
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.integer "behavior_order"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: nil
     t.string "time_operator"
-    t.datetime "time"
+    t.datetime "time", precision: nil
   end
 
   create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
@@ -43,7 +42,7 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
@@ -54,8 +53,8 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
     t.integer "user_id"
     t.integer "organization_id"
     t.string "membership_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.index ["organization_id", "membership_type"], name: "index_memberships_on_organization_id_and_membership_type"
     t.index ["organization_id", "user_id", "membership_type"], name: "index_memberships_on_everything", unique: true
     t.index ["organization_id", "user_id"], name: "index_memberships_on_organization_id_and_user_id"
@@ -67,15 +66,15 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
   create_table "organizations", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "slug"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.boolean "super_admin", default: false
     t.integer "memberships_count", default: 0
     t.integer "applications_count", default: 0
@@ -84,29 +83,29 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
   create_table "projects", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "application_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "key"
     t.string "slug"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: nil
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.datetime "remember_created_at"
+    t.datetime "remember_created_at", precision: nil
     t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
+    t.datetime "current_sign_in_at", precision: nil
+    t.datetime "last_sign_in_at", precision: nil
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", precision: nil
+    t.datetime "updated_at", precision: nil
     t.string "slug"
-    t.datetime "deleted_at"
+    t.datetime "deleted_at", precision: nil
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
+    t.datetime "reset_password_sent_at", precision: nil
     t.string "unique_session_id"
   end
 
@@ -116,8 +115,7 @@ ActiveRecord::Schema.define(version: 2025_04_03_130915) do
     t.string "event", null: false
     t.string "whodunnit"
     t.text "object"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
-
 end
