@@ -24,6 +24,6 @@ private
 
   def user_params
     permitted_parameters = [:name, :email, :password]
-    params.require(:user).permit(*permitted_parameters).delete_if { |_, value| value.empty? }
+    params.expect(user: [*permitted_parameters]).delete_if { |_, value| value.empty? }
   end
 end

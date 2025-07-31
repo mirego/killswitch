@@ -74,6 +74,6 @@ private
 
   def behavior_params
     permitted_parameters = [:version_number, :version_operator, :time, :time_operator, :language, :data]
-    params.require(:behavior).permit(*permitted_parameters)
+    params.expect(behavior: [*permitted_parameters])
   end
 end

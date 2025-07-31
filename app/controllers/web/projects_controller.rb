@@ -64,6 +64,6 @@ private
 
   def project_params
     permitted_parameters = [:name]
-    params.require(:project).permit(*permitted_parameters)
+    params.expect(project: [*permitted_parameters])
   end
 end

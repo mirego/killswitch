@@ -65,6 +65,6 @@ private
 
   def application_params
     permitted_parameters = [:name]
-    params.require(:application).permit(*permitted_parameters)
+    params.expect(application: [*permitted_parameters])
   end
 end
