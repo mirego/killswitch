@@ -34,6 +34,7 @@ module Killswitch
 
     # Force SSL on everything except '/killswitch' endpoint
     config.middleware.use Rack::SSL, exclude: lambda { |env| Rack::Request.new(env).path == '/killswitch' } if Rails.application.config_for(:settings)[:force_ssl]
+    config.assume_ssl = !Rails.application.config_for(:settings)[:force_ssl]
 
     # Rack::Cors
     config.middleware.insert_before 0, Rack::Cors do
