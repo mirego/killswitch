@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [2.0.1] - 2025-08-03
+
+- Do not hardcode `config.assume_ssl` value in production
+
 ## [2.0.0] - 2025-07-31
 
 - Upgrade to Rails 8.0.x (from 6.1.x)
