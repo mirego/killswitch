@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/devise-security/devise-security.git
-  revision: 8d47e4d806ad8ae288d36437fc8a56f555d8657f
+  revision: 9029d3e0f805ff0feddcb4ada15bffdea869eaf5
   specs:
     devise-security (0.18.0)
       devise (>= 4.8.1)
