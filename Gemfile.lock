@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/devise-security/devise-security.git
-  revision: 695f024810f611a779a39868fc82d2691d6b0988
+  revision: ac5bb2dbe57026aaec13dc41f8014d75ef865150
   specs:
     devise-security (0.18.0)
       devise (>= 4.8.1)
@@ -210,7 +210,7 @@ GEM
     puma (7.0.1)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (2.2.17)
+    rack (2.2.18)
     rack-accept (0.4.5)
       rack (>= 0.4)
     rack-canonical-host (1.3.0)
