@@ -31,9 +31,12 @@ protected
     behavior_order_column = Behavior.arel_table[:behavior_order]
     id_column = Behavior.arel_table[:id]
 
-    case_statement = @behaviors_map.reduce(behavior_order_column) do |stmt, (id, order)|
-      Arel::Nodes::Case.new.when(id_column.eq(id.to_i)).then(order).else(stmt)
+    # Build CASE statement with multiple WHEN clauses
+    case_node = Arel::Nodes::Case.new
+    @behaviors_map.each do |id, order|
+      case_node = case_node.when(id_column.eq(id.to_i)).then(order)
     end
+    case_statement = case_node.else(behavior_order_column)
 
     @project.behaviors.where(id: @behavior_ids).update_all(behavior_order: case_statement)
   end
