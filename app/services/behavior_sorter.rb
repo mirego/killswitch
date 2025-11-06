@@ -25,6 +25,7 @@ protected
   # Apply new order to each behavior using bulk update
   # rubocop:disable Rails/SkipsModelValidations
   def reorder_each_behavior
+    # Early return to avoid constructing invalid SQL with no WHEN clauses
     return if @behaviors_map.empty?
 
     # Build a SQL CASE statement for efficient bulk update using Arel to prevent SQL injection

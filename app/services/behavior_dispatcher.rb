@@ -34,6 +34,7 @@ protected
   end
 
   def fetch_language
+    # Use map instead of pluck since behaviors are already loaded via includes(:behaviors) in fetch_project
     available_languages = @project.behaviors.map(&:language).compact.uniq
     return unless available_languages.any?
 
