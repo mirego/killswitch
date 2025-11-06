@@ -34,7 +34,7 @@ protected
   end
 
   def fetch_language
-    available_languages = @project.behaviors.pluck(:language).compact.uniq
+    available_languages = @project.behaviors.map(&:language).compact.uniq
     return unless available_languages.any?
 
     language_matcher = if params[:http_accept_language].present?
