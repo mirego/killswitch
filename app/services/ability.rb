@@ -14,6 +14,9 @@ class Ability
       organization_permissions
     end
 
+    # Only allow users to manage their own accounts
+    can(:manage, User, id: @user.id)
+
     # Prevent users from removing themselves from organizations
     cannot(:destroy, Membership) do |membership|
       membership.user == user
