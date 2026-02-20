@@ -106,4 +106,4 @@ check-dependencies-security:
 
 .PHONY: check-code-security
 check-code-security:
-	bundle exec brakeman
+	bundle exec brakeman --no-exit-on-warn

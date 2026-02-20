@@ -18,6 +18,7 @@ protected
 
   def fetch_user
     @user = User.friendly.find(params[:id])
+    authorize! :manage, @user
   end
 
 private

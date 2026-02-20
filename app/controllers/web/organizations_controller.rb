@@ -3,9 +3,7 @@ class Web::OrganizationsController < Web::ApplicationController
   before_action :fetch_organization, only: [:edit, :update, :destroy]
 
   # GET /organizations
-  def index
-    authorize! :manage, Organization
-  end
+  def index; end
 
   # GET /organizations/new
   def new
@@ -49,10 +47,12 @@ protected
 
   def fetch_organizations
     @organizations = Organization.ascendingly
+    authorize! :manage, Organization
   end
 
   def fetch_organization
     @organization = Organization.friendly.find(params[:id])
+    authorize! :manage, @organization
   end
 
   def organization_params
