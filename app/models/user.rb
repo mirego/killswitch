@@ -46,4 +46,10 @@ protected
   def password_required?
     !persisted? || !password.nil? || !password_confirmation.nil?
   end
+
+  # Address <https://github.com/heartcombo/devise/security/advisories/GHSA-57hq-95w6-v4fc> without updating  Devise
+  def postpone_email_change_until_confirmation_and_regenerate_confirmation_token
+    unconfirmed_email_will_change!
+    super
+  end
 end

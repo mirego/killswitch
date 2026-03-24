@@ -2,3 +2,4 @@
 ignore:
   - CVE-2024-27456 # https://github.com/advisories/GHSA-785g-282q-pwvx (packaging issue with rack-cors)
   - CVE-2024-54133 # https://github.com/rails/rails/security/advisories/GHSA-vfm5-rmrh-j26v (We don’t generate CSP from user input)
+  - CVE-2026-32700 # https://github.com/heartcombo/devise/security/advisories/GHSA-57hq-95w6-v4fc (User model patched)
