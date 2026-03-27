@@ -22,13 +22,26 @@ protected
     @behaviors_map = @behavior_ids.each_with_index.to_a.to_h
   end
 
-  # Apply new order to each behavior
+  # Apply new order to each behavior using bulk update
+  # rubocop:disable Rails/SkipsModelValidations
   def reorder_each_behavior
-    behaviors = @project.behaviors.where(id: @behavior_ids)
-    behaviors.each do |behavior|
-      behavior.update behavior_order: @behaviors_map[behavior.id.to_s]
+    # Early return to avoid constructing invalid SQL with no WHEN clauses
+    return if @behaviors_map.empty?
+
+    # Build a SQL CASE statement for efficient bulk update using Arel to prevent SQL injection
+    behavior_order_column = Behavior.arel_table[:behavior_order]
+    id_column = Behavior.arel_table[:id]
+
+    # Build CASE statement with multiple WHEN clauses
+    case_node = Arel::Nodes::Case.new
+    @behaviors_map.each do |id, order|
+      case_node = case_node.when(id_column.eq(id.to_i)).then(order)
     end
+    case_statement = case_node.else(behavior_order_column)
+
+    @project.behaviors.where(id: @behavior_ids).update_all(behavior_order: case_statement)
   end
+  # rubocop:enable Rails/SkipsModelValidations
 
   # Reset all order keys for the project
   # rubocop:disable Rails/SkipsModelValidations
