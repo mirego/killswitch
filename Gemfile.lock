@@ -411,8 +411,8 @@ DEPENDENCIES
   sentry-ruby
   spring
   spring-commands-rspec
-  sprockets (= 3.7.5)
-  sprockets-rails (= 3.5.2)
+  sprockets
+  sprockets-rails
   turbolinks (~> 5.2)
   uglifier (~> 3.2)
   versionomy
