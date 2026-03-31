@@ -1,5 +1,3 @@
-import Component from 'components/component';
-
 class BehaviorPopulateDropdown extends Component {
   constructor(element) {
     super(element);
@@ -32,5 +30,3 @@ class BehaviorPopulateDropdown extends Component {
     this.textField.val(templateAsPrettyString);
   }
 }
-
-export default BehaviorPopulateDropdown;

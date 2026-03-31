@@ -1,5 +1,3 @@
-import Component from 'components/component';
-
 class OrderableBehavior extends Component {
   constructor(element) {
     super(element);
@@ -36,5 +34,3 @@ class OrderableBehavior extends Component {
     $(event.target).closest('li').find('.data-row').toggle();
   }
 }
-
-export default OrderableBehavior;

@@ -1,5 +1,3 @@
-import Component from 'components/component';
-
 class WaitingBar extends Component {
   constructor(element) {
     super(element);
@@ -18,5 +16,3 @@ class WaitingBar extends Component {
     this.$element.show();
   }
 }
-
-export default WaitingBar;

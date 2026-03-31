@@ -1,4 +1,13 @@
-// = require_tree ./components
-// = require ./main
+//= require ./components/component
+//= require ./components/app
+//= require ./components/orderable-behavior
+//= require ./components/behavior-populate-dropdown
+//= require ./components/waiting-bar
 
-require(['main']);
+$(() => {
+  window.App = new App();
+  window.App.registerComponent(OrderableBehavior, '.behaviors-list')
+    .registerComponent(BehaviorPopulateDropdown, '.behavior-populate')
+    .registerComponent(WaitingBar, '.waiting-bar')
+    .initialize();
+});

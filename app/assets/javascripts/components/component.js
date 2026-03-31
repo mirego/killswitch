@@ -10,5 +10,3 @@ class Component {
   bindEvents() {}
   unbindEvents() {}
 }
-
-export default Component;

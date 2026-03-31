@@ -8,7 +8,6 @@ module.exports = {
   extends: ['plugin:mirego/recommended'],
   globals: {
     $: 'readonly',
-    require: 'readonly',
     sortable: 'readonly'
   },
   rules: {

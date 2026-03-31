@@ -4,7 +4,6 @@
   "license": "BSD-3-Clause",
   "version": "0.0.0",
   "dependencies": {
-    "almond": "0.2.9",
     "bootstrap": "3.4.1",
     "html5sortable": "0.13.1",
     "jquery": "3.5.0",
