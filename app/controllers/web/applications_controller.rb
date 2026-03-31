@@ -58,7 +58,7 @@ protected
   end
 
   def fetch_application
-    @application = @organization.applications.friendly.find(params[:id])
+    @application = @organization.applications.includes(:projects).friendly.find(params[:id])
   end
 
 private

@@ -57,7 +57,7 @@ protected
   end
 
   def fetch_project
-    @project = @application.projects.friendly.find(params[:id])
+    @project = @application.projects.includes(:behaviors).friendly.find(params[:id])
   end
 
 private
