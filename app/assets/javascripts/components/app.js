@@ -1,4 +1,4 @@
-class App {
+KS.App = class {
   constructor() {
     this.registeredComponents = [];
     this.instanciatedComponents = [];
@@ -74,6 +74,4 @@ class App {
     this.instanciatedComponents.splice(0, this.instanciatedComponents.length);
     return this;
   }
-}
-
-export default App;
+};

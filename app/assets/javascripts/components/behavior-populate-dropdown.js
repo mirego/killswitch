@@ -1,6 +1,4 @@
-import Component from 'components/component';
-
-class BehaviorPopulateDropdown extends Component {
+KS.BehaviorPopulateDropdown = class extends KS.Component {
   constructor(element) {
     super(element);
     this.linkElements = this.$element.find('a');
@@ -31,6 +29,4 @@ class BehaviorPopulateDropdown extends Component {
 
     this.textField.val(templateAsPrettyString);
   }
-}
-
-export default BehaviorPopulateDropdown;
+};

@@ -1,4 +1,4 @@
-class Component {
+KS.Component = class {
   constructor(element) {
     this.$element = $(element);
   }
@@ -9,6 +9,4 @@ class Component {
 
   bindEvents() {}
   unbindEvents() {}
-}
-
-export default Component;
+};

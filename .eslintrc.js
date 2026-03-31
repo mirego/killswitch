@@ -8,8 +8,8 @@ module.exports = {
   extends: ['plugin:mirego/recommended'],
   globals: {
     $: 'readonly',
-    require: 'readonly',
-    sortable: 'readonly'
+    sortable: 'readonly',
+    KS: 'readonly'
   },
   rules: {
     'operator-linebreak': ['error', 'after']
