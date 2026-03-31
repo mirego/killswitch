@@ -8,6 +8,7 @@ class Web::ApplicationController < ApplicationController
 
   # Expose some methods to views
   helper_method :current_organization
+  skip_before_action :verify_authenticity_token
 
 protected
 

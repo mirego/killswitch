@@ -1,4 +1,4 @@
-class OrderableBehavior extends Component {
+KS.OrderableBehavior = class extends KS.Component {
   constructor(element) {
     super(element);
 
@@ -33,4 +33,4 @@ class OrderableBehavior extends Component {
   handleDataToggle(event) {
     $(event.target).closest('li').find('.data-row').toggle();
   }
-}
+};

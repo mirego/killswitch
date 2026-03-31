@@ -9,8 +9,8 @@ DOCKER_REMOTE_IMAGE = $(DOCKER_REGISTRY)/$(DOCKER_LOCAL_IMAGE)
 # Linter and formatter configuration
 # ----------------------------------
 
-PRETTIER_FILES_PATTERN = '*.config.js' '**/*.{js,es6}' './*.md' './*/*.md'
-SCRIPTS_PATTERN = '**/*.es6' '**/*.js'
+PRETTIER_FILES_PATTERN = '*.config.js' '**/*.js' './*.md' './*/*.md'
+SCRIPTS_PATTERN = '**/*.js'
 STYLES_PATTERN = '**/*.scss' '**/*.css'
 
 # Introspection targets

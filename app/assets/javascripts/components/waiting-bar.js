@@ -1,4 +1,4 @@
-class WaitingBar extends Component {
+KS.WaitingBar = class extends KS.Component {
   constructor(element) {
     super(element);
     this.bindEvents();
@@ -15,4 +15,4 @@ class WaitingBar extends Component {
   handlePageFetch() {
     this.$element.show();
   }
-}
+};
