@@ -8,6 +8,7 @@ class Web::OrganizationsController < Web::ApplicationController
   # GET /organizations/new
   def new
     @organization = Organization.new
+    authorize! :create, @organization
   end
 
   # GET /organizations/:id/edit
@@ -16,6 +17,7 @@ class Web::OrganizationsController < Web::ApplicationController
   # POST /organizations
   def create
     @organization = Organization.new(organization_params)
+    authorize! :create, @organization
 
     if @organization.save
       redirect_to web_organizations_path, notice: t('.notice')
