@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_31_014203) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_23_112300) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -107,6 +107,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_31_014203) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at", precision: nil
     t.string "unique_session_id"
+    t.integer "failed_attempts", default: 0, null: false
+    t.string "unlock_token"
+    t.datetime "locked_at"
+    t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
   create_table "versions", id: :serial, force: :cascade do |t|
