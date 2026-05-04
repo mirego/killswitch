@@ -17,10 +17,10 @@
     "eslint-plugin-mirego": "0.0.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
-    "postcss": ">=8.4.31",
+    "postcss": ">=8.5.10",
     "prettier": "2.5.1",
-    "stylelint": "13.13.1",
-    "stylelint-config-mirego": "2.0.0",
-    "stylelint-order": "4.1.0"
+    "stylelint": "17.9.0",
+    "stylelint-config-mirego": "2.3.0",
+    "stylelint-order": "8.1.1"
   }
 }
