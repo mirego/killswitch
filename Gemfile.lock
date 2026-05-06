@@ -193,7 +193,7 @@ GEM
       activerecord (>= 6.1)
       request_store (~> 1.4)
     parallel (1.27.0)
-    parser (3.3.9.0)
+    parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
     pg (1.6.2)
@@ -391,7 +391,7 @@ DEPENDENCIES
   jquery-turbolinks
   mini_check
   paper_trail (~> 16.0)
-  parser (~> 3.3.8)
+  parser (~> 3.3.11)
   pg
   puma
   rack-accept
