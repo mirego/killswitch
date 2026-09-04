@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_04_23_112300) do
+ActiveRecord::Schema[8.0].define(version: 2026_09_04_181812) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -80,6 +80,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_23_112300) do
     t.integer "applications_count", default: 0
   end
 
+  create_table "project_activity_dailies", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.date "date", null: false
+    t.bigint "request_count", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date"], name: "index_project_activity_dailies_on_date"
+    t.index ["project_id", "date"], name: "index_project_activity_dailies_on_project_id_and_date", unique: true
+    t.index ["project_id"], name: "index_project_activity_dailies_on_project_id"
+  end
+
   create_table "projects", id: :serial, force: :cascade do |t|
     t.string "name"
     t.integer "application_id"
@@ -88,6 +99,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_23_112300) do
     t.string "key"
     t.string "slug"
     t.datetime "deleted_at", precision: nil
+    t.datetime "last_seen_at"
+    t.index ["last_seen_at"], name: "index_projects_on_last_seen_at"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
@@ -122,4 +135,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_23_112300) do
     t.datetime "created_at", precision: nil
     t.index ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
   end
+
+  add_foreign_key "project_activity_dailies", "projects"
 end

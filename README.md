@@ -27,6 +27,7 @@
 Every runtime dependencies are defined in the `.tool-versions` file. These external dependencies are also required:
 
 - PostgreSQL (`~> 10.0`)
+- Redis (`~> 7.0`) — used by the project activity analytics pipeline
 
 ## 🏎 Kickstart
 
@@ -35,6 +36,31 @@ Every runtime dependencies are defined in the `.tool-versions` file. These exter
 All required environment variables are documented in [`.env.dev`](./.env.dev).
 
 When running `rails`, `rake` or `make` commands, it is important that these variables are present in the environment. There are several ways to achieve this. Using [`nv`](https://github.com/jcouture/nv) is recommended since it works out of the box with `.env.*` files.
+
+### Analytics
+
+Killswitch tracks API usage per project to help identify which projects are still actively used. Each valid `GET /killswitch` request is counted in Redis (near-zero overhead on the hot path), and a recurring task flushes the counters into PostgreSQL:
+
+- `projects.last_seen_at` — last time a project served a request (updated on every flush, throttled)
+- `project_activity_dailies` — per-project, per-day request counts (flushed for past dates only)
+
+To enable it, set `ANALYTICS_ENABLED=true` and schedule the flush task (e.g. every 5 minutes with cron):
+
+```shell
+*/5 * * * * cd /app && bin/rake analytics:flush
+```
+
+Example queries:
+
+```sql
+-- Projects with no traffic in the last 90 days
+SELECT id, name, last_seen_at FROM projects
+WHERE last_seen_at < NOW() - INTERVAL '90 days' OR last_seen_at IS NULL;
+
+-- Daily request counts for a project over the last 30 days
+SELECT date, request_count FROM project_activity_dailies
+WHERE project_id = 42 AND date >= CURRENT_DATE - 30 ORDER BY date;
+```
 
 ### Initial setup
 
