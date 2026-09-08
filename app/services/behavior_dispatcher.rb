@@ -1,5 +1,5 @@
 class BehaviorDispatcher
-  attr_reader :matching_behavior
+  attr_reader :matching_behavior, :project
 
   class MissingParameter < StandardError
   end

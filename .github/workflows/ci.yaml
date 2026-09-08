@@ -26,11 +26,17 @@ jobs:
         ports: ['5432:5432']
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
+      redis:
+        image: redis:7.2-alpine
+        ports: ['6379:6379']
+        options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
+
     env:
       CANONICAL_HOST: localhost
       DATABASE_URL: postgres://postgres:postgres@localhost/killswitch_test
       MAILER_FROM: localhost
       RAILS_ENV: test
+      REDIS_URL: redis://localhost:6379/0
 
     steps:
       - uses: actions/checkout@v3

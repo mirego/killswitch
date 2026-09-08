@@ -272,6 +272,10 @@ GEM
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
       tsort
+    redis (5.4.1)
+      redis-client (>= 0.22.0)
+    redis-client (0.30.1)
+      connection_pool
     regexp_parser (2.11.3)
     reline (0.7.0)
       io-console (~> 0.5)
@@ -405,6 +409,7 @@ DEPENDENCIES
   rails-html-sanitizer (~> 1.7.1)
   rails_12factor
   ranked-model
+  redis (~> 5.0)
   rexml (~> 3.4)
   rspec-rails (~> 8.0)
   rubocop (~> 1.81)

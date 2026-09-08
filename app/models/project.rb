@@ -2,6 +2,7 @@ class Project < ApplicationRecord
   # Associations
   belongs_to :application
   has_many :behaviors, -> { ascendingly }, dependent: :destroy, inverse_of: :project
+  has_many :project_activity_dailies, dependent: :destroy, inverse_of: :project
 
   # Validations
   validates :name, presence: true, uniqueness: { scope: [:application_id, :deleted_at] }

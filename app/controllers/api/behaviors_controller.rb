@@ -7,6 +7,8 @@ class API::BehaviorsController < API::ApplicationController
     dispatcher = BehaviorDispatcher.new
     dispatcher.dispatch!(request)
 
+    Analytics::ProjectActivityTracker.track(dispatcher.project.id)
+
     headers['Vary'] = VARY_HEADER
     render json: dispatcher.matching_behavior
   end

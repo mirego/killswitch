@@ -29,4 +29,9 @@ RSpec.configure do |config|
   config.before(:suite) { DatabaseCleaner.strategy = :truncation }
   config.before(:each) { DatabaseCleaner.start }
   config.after(:each) { DatabaseCleaner.clean }
+
+  # Reset analytics Redis keys between tests
+  config.before(:each) do
+    KILLSWITCH_REDIS.keys('analytics:*').each { |key| KILLSWITCH_REDIS.del(key) }
+  end
 end
