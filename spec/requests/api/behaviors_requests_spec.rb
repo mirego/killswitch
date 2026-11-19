@@ -36,7 +36,7 @@ describe API::BehaviorsController, type: :request do
       let(:project) { create(:project) }
       let(:params) { { version: '1.0', key: project.key } }
 
-      it { expect(response.headers['Vary']).to eq 'Accept-Language, Origin' }
+      it { expect(response.headers['Vary']).to eq 'Accept-Language, Accept, X-Requested-With, Origin' }
       it { expect(response.status).to eq 200 }
 
       it 'tracks the project activity' do
