@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.3.4'
+ruby '3.3.14'
 
 gem 'activerecord_json_validator', '~> 3.1.0'
 gem 'autoprefixer-rails', '6.4.0.1'
